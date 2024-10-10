@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<Defs>
+  
+  <!--===== Cernos Prime =====-->
+  <ThingDef ParentName="BaseHumanMakeableGun">
+    <defName>Milkwater_Cernos_Prime</defName>
+    <label>cernos prime</label>
+    <description>A noble bow to hunt hellish beasts.</description>
+    <graphicData>
+      <texPath>Things/Weapons/Milkwater_Cernos_Prime</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>1</drawSize>
+    </graphicData>
+    <soundInteract>Bow_Recurve</soundInteract>
+    <recipeMaker>
+      <recipeUsers Inherit="False">
+        <li>TableOrokin</li>
+      </recipeUsers>
+      <researchPrerequisite>WF_PrimedWeaponry</researchPrerequisite>
+      <skillRequirements>
+        <Crafting>9</Crafting>
+      </skillRequirements>
+    </recipeMaker>
+    <statBases>
+      <WorkToMake>75000</WorkToMake>
+      <Mass>2</Mass>
+      <AccuracyTouch>0.75</AccuracyTouch>
+      <AccuracyShort>0.70</AccuracyShort>
+      <AccuracyMedium>0.75</AccuracyMedium>
+      <AccuracyLong>0.70</AccuracyLong>
+      <RangedWeapon_Cooldown>1.20</RangedWeapon_Cooldown>
+    </statBases>
+    <costList>
+	  <ComponentPrime>3</ComponentPrime>
+    </costList>
+    <verbs>
+      <li>
+        <verbClass>Verb_Shoot</verbClass>
+        <hasStandardCommand>true</hasStandardCommand>
+        <defaultProjectile>Milkwater_Arrow_Cernos_Prime</defaultProjectile>
+        <warmupTime>1</warmupTime>
+        <range>40</range>
+        <burstShotCount>3</burstShotCount>
+        <ticksBetweenBurstShots>1</ticksBetweenBurstShots>
+        <soundCast>Milkwater_Shot_Cernos_Prime</soundCast>
+        <muzzleFlashScale>0</muzzleFlashScale>
+      </li>
+    </verbs>
+    <tools>
+      <li>
+        <label>limb</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>11</power>
+        <cooldownTime>1.2</cooldownTime>
+      </li>
+    </tools>
+    <weaponClasses>
+      <li>Ranged</li>
+      <li>RangedLight</li>
+	  <li>LongShots</li>
+    </weaponClasses>
+    <weaponTags>
+      <li>LongShots</li>
+	  <li>SpacerGun</li>
+    </weaponTags>
+  </ThingDef>
+   
+</Defs>

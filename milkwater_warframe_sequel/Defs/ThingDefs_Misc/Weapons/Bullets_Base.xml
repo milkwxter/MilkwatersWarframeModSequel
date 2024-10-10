@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+<!-- Custom Warframe Bullet -->
+<ThingDef Name="ProjectileWarframe" Abstract="True">
+    <category>Projectile</category>
+    <tickerType>Normal</tickerType>
+    <altitudeLayer>Projectile</altitudeLayer>
+    <thingClass>WarframeModSequel.ProjectileWarframe</thingClass>
+    <label>bullet</label>
+    <useHitPoints>False</useHitPoints>
+    <neverMultiSelect>True</neverMultiSelect>
+    <graphicData>
+      <shaderType>Transparent</shaderType>
+    </graphicData>
+  </ThingDef>
+
+<!-- Custom Warframe Lasers - Using VanillaWeaponsExpandedLaser -->
+  <ThingDef>
+    <defName>WFS_BeamGraphic</defName>
+    <thingClass>VanillaWeaponsExpandedLaser.LaserBeamGraphic</thingClass>
+    <drawOffscreen>true</drawOffscreen>
+    <label>laser beam</label>
+    <category>Projectile</category>
+    <tickerType>Normal</tickerType>
+    <altitudeLayer>MoteOverhead</altitudeLayer>
+    <useHitPoints>False</useHitPoints>
+    <neverMultiSelect>True</neverMultiSelect>
+  </ThingDef>
+
+  <ThingDef Abstract="True" Name="WF_Bullet_LaserGeneric" ParentName="BaseBullet">
+    <thingClass>WarframeModSequel.LaserBeamWarframe</thingClass>
+    <drawOffscreen>true</drawOffscreen>
+    <beamGraphic>WFS_BeamGraphic</beamGraphic>
+   
+    <graphicData>
+      <graphicClass>Graphic_Single</graphicClass>
+      <texPath>Things/Projectile/Charge_Small</texPath>
+      <shaderType>TransparentPostLight</shaderType>
+      <drawSize>1.5</drawSize>
+    </graphicData>
+    
+    <projectile>
+      <damageDef>Burn</damageDef>
+      <speed>10000</speed>
+    </projectile>
+    
+    <seam>0.25</seam>
+  </ThingDef>
+</Defs>

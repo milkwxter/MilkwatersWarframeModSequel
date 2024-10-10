@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <!-- 3 generic damage flecks -->
+  <FleckDef ParentName="FleckBase">
+    <defName>WFS_Impact_Fleck</defName>
+    <altitudeLayer>MoteOverhead</altitudeLayer>
+    <solidTime>0.30</solidTime>
+    <fadeOutTime>0.30</fadeOutTime>
+    <graphicData>
+      <texPath>Things/Effects/statusEffects/impact</texPath>
+      <shaderType>MoteGlow</shaderType>
+	  <drawSize>0.5</drawSize>
+    </graphicData>
+  </FleckDef>
+  
+  <FleckDef ParentName="FleckBase">
+    <defName>WFS_Puncture_Fleck</defName>
+    <altitudeLayer>MoteOverhead</altitudeLayer>
+    <solidTime>0.30</solidTime>
+    <fadeOutTime>0.30</fadeOutTime>
+    <graphicData>
+      <texPath>Things/Effects/statusEffects/puncture</texPath>
+      <shaderType>MoteGlow</shaderType>
+	  <drawSize>0.5</drawSize>
+    </graphicData>
+  </FleckDef>
+  
+  <FleckDef ParentName="FleckBase">
+    <defName>WFS_Slash_Fleck</defName>
+    <altitudeLayer>MoteOverhead</altitudeLayer>
+    <solidTime>0.30</solidTime>
+    <fadeOutTime>0.30</fadeOutTime>
+    <graphicData>
+      <texPath>Things/Effects/statusEffects/slash</texPath>
+      <shaderType>MoteGlow</shaderType>
+	  <drawSize>0.5</drawSize>
+    </graphicData>
+  </FleckDef>
+  
+  <!-- 4 elemental damage flecks -->
+  <FleckDef ParentName="FleckBase">
+    <defName>WFS_Toxin_Fleck</defName>
+    <altitudeLayer>MoteOverhead</altitudeLayer>
+    <solidTime>0.30</solidTime>
+    <fadeOutTime>0.30</fadeOutTime>
+    <graphicData>
+      <texPath>Things/Effects/statusEffects/toxin</texPath>
+      <shaderType>MoteGlow</shaderType>
+	  <drawSize>0.5</drawSize>
+    </graphicData>
+  </FleckDef>
+  
+  <!-- 6 combined elemental damage flecks -->
+  <FleckDef ParentName="FleckBase">
+    <defName>WFS_Radiation_Fleck</defName>
+    <altitudeLayer>MoteOverhead</altitudeLayer>
+    <solidTime>0.30</solidTime>
+    <fadeOutTime>0.30</fadeOutTime>
+    <graphicData>
+      <texPath>Things/Effects/statusEffects/radiation</texPath>
+      <shaderType>MoteGlow</shaderType>
+	  <drawSize>0.5</drawSize>
+    </graphicData>
+  </FleckDef>
+  
+  
+</Defs>
