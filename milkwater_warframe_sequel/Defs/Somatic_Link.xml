@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Defs>
+  
+<ThingDef ParentName="BuildingBase">
+  <defName>WF_Somatic_Link</defName>
+  <label>Somatic Link</label>
+  <thingClass>WarframeModSequel.SomaticLink</thingClass>
+  
+  <building>
+	<bed_showSleeperBody>True</bed_showSleeperBody>
+  </building>
+  
+  <graphicData>
+    <texPath>Things/Building/Somatic_Link</texPath>
+    <graphicClass>Graphic_Single</graphicClass>
+    <drawSize>(4,4)</drawSize>
+  </graphicData>
+  
+  <designationCategory>Production</designationCategory>
+  <size>(4,3)</size>
+</ThingDef>
+
+<JobDef>
+  <defName>UseSomaticLink</defName>
+  <driverClass>WarframeModSequel.JobDriver_UseSomaticLink</driverClass>
+  <reportString>Operating somatic link.</reportString>
+</JobDef>
+
+</Defs>

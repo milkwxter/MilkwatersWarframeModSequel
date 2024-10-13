@@ -6,7 +6,7 @@
 		<defName>WF_Generic_Impact</defName>
 		<label>impact proc</label>
 		<description>This pawn has suffered a great hit, and will get thrown into the air and stunned.</description>
-		<hediffClass>WarframePsycasts.Hediff_WF_Impact</hediffClass>
+		<hediffClass>WarframeModSequel.Hediff_WF_Impact</hediffClass>
 		<defaultLabelColor>(1, 1, 1)</defaultLabelColor>
 		<isBad>True</isBad>
 		<comps>
@@ -24,14 +24,14 @@
                 </li>
             </capMods>
         </li>
-	</stages>
+		</stages>
 </HediffDef>
 
 <HediffDef ParentName="RoleStatBuff">
 		<defName>WF_Generic_Puncture</defName>
 		<label>puncture proc</label>
 		<description>This pawn's body has been punctured, it's melee speed and damage output are slowed.</description>
-		<hediffClass>WarframePsycasts.Hediff_WF_Puncture</hediffClass>
+		<hediffClass>WarframeModSequel.Hediff_WF_Puncture</hediffClass>
 		<defaultLabelColor>(1, 1, 1)</defaultLabelColor>
 		<isBad>True</isBad>
 		<comps>
@@ -54,7 +54,7 @@
 		<defName>WF_Generic_Slash</defName>
 		<label>slash proc</label>
 		<description>This pawn has suffered a great slash, losing blood and stripping it of its armor.</description>
-		<hediffClass>WarframePsycasts.Hediff_WF_Slash</hediffClass>
+		<hediffClass>WarframeModSequel.Hediff_WF_Slash</hediffClass>
 		<defaultLabelColor>(1, 1, 1)</defaultLabelColor>
 		<isBad>True</isBad>
 		<comps>
@@ -78,7 +78,7 @@
 		<defName>WF_Generic_Toxin</defName>
 		<label>toxin proc</label>
 		<description>This pawn has been infected with a toxin, and will take damage over time.</description>
-		<hediffClass>WarframePsycasts.Hediff_WF_Toxin</hediffClass>
+		<hediffClass>WarframeModSequel.Hediff_WF_Toxin</hediffClass>
 		<defaultLabelColor>(0, 1, 0)</defaultLabelColor>
 		<isBad>True</isBad>
 		<comps>
@@ -94,7 +94,7 @@
 		<defName>WF_Generic_Radiation</defName>
 		<label>radiation proc</label>
 		<description>This pawn's confusion will lead them to attack pawns of the same faction.</description>
-		<hediffClass>WarframePsycasts.Hediff_WF_Radiation</hediffClass>
+		<hediffClass>WarframeModSequel.Hediff_WF_Radiation</hediffClass>
 		<defaultLabelColor>(1, 1, 0)</defaultLabelColor>
 		<isBad>True</isBad>
 		<comps>

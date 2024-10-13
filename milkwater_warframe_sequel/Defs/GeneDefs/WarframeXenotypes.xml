@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Defs>
+
+  <XenotypeDef>
+    <defName>WarframeXenotype</defName>
+    <label>warframe</label>
+    <description>Warframe</description>
+    <descriptionShort>Warframe</descriptionShort>
+    <iconPath>Icon/Icon_Grineer</iconPath>
+    <inheritable>true</inheritable>
+    <nameMaker>NamerPersonGrineerMale</nameMaker>
+    <nameMakerFemale>NamerPersonGrineerFemale</nameMakerFemale>
+    <chanceToUseNameMaker>1</chanceToUseNameMaker>
+    <combatPowerFactor>1.0</combatPowerFactor>
+    <genes>
+		<li>Hair_BaldOnly</li>
+		<li>Beard_NoBeardOnly</li>
+		<li>Skin_SheerWhite</li>
+    </genes>
+  </XenotypeDef>
+
+</Defs>

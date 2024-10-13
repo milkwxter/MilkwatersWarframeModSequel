@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+<HediffDef ParentName="RoleStatBuff">
+		<defName>WF_Generic_SomaticLinkBroken</defName>
+		<label>broken somatic link</label>
+		<description>This pawns somatic link is broken. In order to move again they will need the link reconnected.</description>
+		<hediffClass>HediffWithComps</hediffClass>
+		<defaultLabelColor>(1, 0, 0)</defaultLabelColor>
+		<isBad>True</isBad>
+		<stages>
+		<li>
+            <capMods>
+                <li>
+                    <capacity>Moving</capacity>
+                    <offset>-1.0</offset>
+                </li>
+            </capMods>
+        </li>
+		</stages>
+</HediffDef>
+
+</Defs>

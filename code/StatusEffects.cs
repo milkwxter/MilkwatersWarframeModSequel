@@ -4,7 +4,7 @@ using Verse.AI;
 using Verse;
 using UnityEngine;
 
-namespace WarframePsycasts
+namespace WarframeModSequel
 {
     // Generic non-elemental Status effects
     public class Hediff_WF_Impact : HediffWithComps
