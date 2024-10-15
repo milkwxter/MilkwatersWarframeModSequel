@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+<EffecterDef>
+    <defName>OperatingSomaticLink</defName>
+    <children>
+      <li>
+        <subEffecterClass>SubEffecter_SprayerContinuous</subEffecterClass>
+        <moteDef>Mote_OperatingSomaticLink</moteDef>
+        <spawnLocType>BetweenTouchingCells</spawnLocType>
+        <positionLerpFactor>0.6</positionLerpFactor>
+        <scale>0.3~0.5</scale>
+        <color>(0, 255, 255)</color>
+        <positionRadius>0.4</positionRadius>
+        <ticksBetweenMotes>20</ticksBetweenMotes>
+      </li>
+    </children>
+  </EffecterDef>
+
+  <ThingDef ParentName="MoteBase">
+    <defName>Mote_OperatingSomaticLink</defName>
+    <altitudeLayer>MoteOverhead</altitudeLayer>
+    <mote>
+      <fadeInTime>0.2</fadeInTime>
+      <solidTime>0.2</solidTime>
+      <fadeOutTime>0.2</fadeOutTime>
+    </mote>
+    <graphicData>
+      <texPath>Things/Mote/operating</texPath>
+      <shaderType>MoteGlow</shaderType>
+    </graphicData>
+  </ThingDef>
+  
+</Defs>

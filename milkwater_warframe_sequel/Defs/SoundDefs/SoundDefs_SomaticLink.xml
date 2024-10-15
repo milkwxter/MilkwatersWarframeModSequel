@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <Defs>
-	<!--=============== Generic Laser ====================-->
+	<!--=============== Operator Start & End ====================-->
     <SoundDef>
-        <defName>Milkwater_Shot_GenericLaser</defName>
+        <defName>Milkwater_OperateStart</defName>
         <context>MapOnly</context>
         <eventNames/>
         <maxSimultaneous>1</maxSimultaneous>
@@ -11,7 +11,7 @@
             <li>
                 <grains>
                     <li Class="AudioGrain_Clip">
-                        <clipPath>Milkwater_Shot_GenericLaser</clipPath>
+                        <clipPath>SomaticLink/Milkwater_OperateStart</clipPath>
                     </li>
                 </grains>
                 <volumeRange>
@@ -27,9 +27,8 @@
         </subSounds>
     </SoundDef>
 	
-	<!--=============== Critical hit ====================-->
-    <SoundDef>
-        <defName>Milkwater_Crit</defName>
+	<SoundDef>
+        <defName>Milkwater_OperateEnd</defName>
         <context>MapOnly</context>
         <eventNames/>
         <maxSimultaneous>1</maxSimultaneous>
@@ -37,7 +36,7 @@
             <li>
                 <grains>
                     <li Class="AudioGrain_Clip">
-                        <clipPath>Milkwater_Crit</clipPath>
+                        <clipPath>SomaticLink/Milkwater_OperateEnd</clipPath>
                     </li>
                 </grains>
                 <volumeRange>

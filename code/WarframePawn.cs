@@ -48,7 +48,10 @@ namespace WarframeModSequel
             {
                 if (thing is SomaticLink somaticLink && somaticLink.getOperatorPawn() != null)
                 {
-                    return true;
+                    if(somaticLink.getWarframePawn() == this)
+                    {
+                        return true;
+                    }
                 }
             }
             return false;

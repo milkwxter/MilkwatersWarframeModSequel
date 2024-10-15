@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Defs>
+
+<JobDef>
+  <defName>UseSomaticLink</defName>
+  <driverClass>WarframeModSequel.JobDriver_UseSomaticLink</driverClass>
+  <reportString>Operating somatic link.</reportString>
+</JobDef>
+
+<JobDef>
+  <defName>UseWarframeGestator</defName>
+  <driverClass>WarframeModSequel.JobDriver_UseWarframeGestator</driverClass>
+  <reportString>Operating warframe gestator.</reportString>
+</JobDef>
+
+</Defs>

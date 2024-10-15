@@ -2,9 +2,9 @@
 <Defs>
 
 <AlienRace.ThingDef_AlienRace ParentName="Human">
-    <defName>Warframe</defName>
-    <label>example alien</label>
-    <description>This is an example alien race that was created for the wiki tutorial.</description>
+    <defName>WarframeBaseRace</defName>
+    <label>warframe</label>
+    <description>A mysterious weaponized armor controlled solely by the Tenno. Through the Warframe, Tenno can cheat death, channel the forbidden Void energies and face scores of enemies without fatigue.</description>
 	<thingClass>WarframeModSequel.WarframePawn</thingClass>
 	<alienRace>
 		<graphicPaths>
@@ -37,9 +37,9 @@
 </AlienRace.ThingDef_AlienRace>
 
 <PawnKindDef ParentName="BasePlayerPawnKind">
-    <defName>ExampleAlienColonist</defName>
-    <label>colonist</label>
-    <race>Warframe</race>
+    <defName>WF_Colonist_Excalibur</defName>
+    <label>excalibur</label>
+    <race>WarframeBaseRace</race>
     <defaultFactionType>PlayerColony</defaultFactionType>
 
     <!-- This is a required field. 13~21 is the default value for Crashlanded player colonists. -->

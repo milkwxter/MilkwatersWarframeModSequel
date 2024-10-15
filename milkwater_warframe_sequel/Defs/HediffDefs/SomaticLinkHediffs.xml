@@ -15,6 +15,10 @@
                     <capacity>Moving</capacity>
                     <offset>-1.0</offset>
                 </li>
+				<li>
+                    <capacity>Manipulation</capacity>
+                    <offset>-1.0</offset>
+                </li>
             </capMods>
         </li>
 		</stages>

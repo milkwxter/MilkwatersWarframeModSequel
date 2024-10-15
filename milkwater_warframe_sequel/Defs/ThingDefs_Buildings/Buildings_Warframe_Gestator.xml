@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Defs>
+  
+<ThingDef ParentName="BuildingBase">
+  <defName>WF_Warframe_Gestator</defName>
+  <label>Warframe Gestator</label>
+  <thingClass>WarframeModSequel.WarframeGestator</thingClass>
+  
+  <graphicData>
+    <texPath>Things/Building/WarframeGestator</texPath>
+    <graphicClass>Graphic_Multi</graphicClass>
+    <drawSize>(5.6,4)</drawSize>
+  </graphicData>
+  
+  <designationCategory>Production</designationCategory>
+  <size>(3,2)</size>
+  <passability>PassThroughOnly</passability>
+  <hasInteractionCell>True</hasInteractionCell>
+  <interactionCellOffset>(0,0,2)</interactionCellOffset>
+  
+  <tickerType>Normal</tickerType>
+  <drawerType>MapMeshAndRealTime</drawerType>
+  <altitudeLayer>Building</altitudeLayer>
+  
+  <building>
+      <barDrawData>
+        <north>
+          <preRotationOffset>(-1.06, 0.91)</preRotationOffset>
+          <size>(0.7, 0.13)</size>
+        </north>
+        <south>
+          <preRotationOffset>(-1.06, 0.82)</preRotationOffset>
+          <size>(0.7, 0.13)</size>
+        </south>
+        <east>
+          <preRotationOffset>(1.06, -0.97)</preRotationOffset>
+          <size>(0.7, 0.13)</size>
+        </east>
+        <west>
+          <preRotationOffset>(-1.06, -0.97)</preRotationOffset>
+          <size>(0.7, 0.13)</size>
+        </west>
+      </barDrawData>
+      <formingGraphicData>
+        <texPath>Things/Pawn/HalfGestatedWarframe</texPath>
+        <graphicClass>Graphic_Single</graphicClass>
+        <drawSize>(1,1)</drawSize>
+      </formingGraphicData>
+      <formingMechBobSpeed>0.0005</formingMechBobSpeed>
+      <formingMechYBobDistance>0.08</formingMechYBobDistance>
+      <mechGestatorCylinderGraphic>
+        <texPath>Things/Building/WarframeGestatorGlass</texPath>
+        <graphicClass>Graphic_Multi</graphicClass>
+        <drawSize>(5.6,4)</drawSize>
+        <shaderType>Transparent</shaderType>
+      </mechGestatorCylinderGraphic>
+      <mechGestatorTopGraphic>
+        <texPath>Things/Building/WarframeGestatorTop</texPath>
+        <graphicClass>Graphic_Multi</graphicClass>
+        <drawSize>(5.6,4)</drawSize>
+      </mechGestatorTopGraphic>
+    </building>
+</ThingDef>
+
+</Defs>

@@ -6,10 +6,6 @@
   <label>Somatic Link</label>
   <thingClass>WarframeModSequel.SomaticLink</thingClass>
   
-  <building>
-	<bed_showSleeperBody>True</bed_showSleeperBody>
-  </building>
-  
   <graphicData>
     <texPath>Things/Building/Somatic_Link</texPath>
     <graphicClass>Graphic_Single</graphicClass>
@@ -17,13 +13,10 @@
   </graphicData>
   
   <designationCategory>Production</designationCategory>
-  <size>(4,3)</size>
+  <size>(3,4)</size>
+  <passability>PassThroughOnly</passability>
+  <hasInteractionCell>True</hasInteractionCell>
+  <interactionCellOffset>(0,0,0)</interactionCellOffset>
 </ThingDef>
-
-<JobDef>
-  <defName>UseSomaticLink</defName>
-  <driverClass>WarframeModSequel.JobDriver_UseSomaticLink</driverClass>
-  <reportString>Operating somatic link.</reportString>
-</JobDef>
 
 </Defs>
