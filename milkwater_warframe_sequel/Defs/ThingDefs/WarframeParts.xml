@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
 
-  <!--=============== ComponentPrime ====================-->
+  <!--=============== Warframe Parts ====================-->
   <ThingDef ParentName="ResourceBase">
     <defName>WarframeParts</defName>
     <label>warframe parts</label>
@@ -15,13 +15,16 @@
     <soundDrop>Standard_Drop</soundDrop>
     <stackLimit>3</stackLimit>
     <healthAffectsPrice>false</healthAffectsPrice>
+	
     <statBases>
       <MaxHitPoints>120</MaxHitPoints>
       <MarketValue>400</MarketValue>
-      <Mass>0.6</Mass>
+      <Mass>5</Mass>
       <Flammability>0.2</Flammability>
       <DeteriorationRate>2.0</DeteriorationRate>
+	  <WorkToMake>15000</WorkToMake>
     </statBases>
+	
 	<thingCategories>
       <li>ItemsMisc</li>
     </thingCategories>
@@ -29,6 +32,21 @@
 	<tradeTags>
       <li>ExoticMisc</li>
     </tradeTags>
+	
+	<recipeMaker>
+      <recipeUsers Inherit="False">
+        <li>TableOrokin</li>
+      </recipeUsers>
+      <researchPrerequisite>WF_Warframes</researchPrerequisite>
+      <skillRequirements>
+        <Crafting>8</Crafting>
+      </skillRequirements>
+    </recipeMaker>
+	
+    <costList>
+      <Steel>80</Steel>
+	  <ComponentIndustrial>5</ComponentIndustrial>
+    </costList>
   </ThingDef>
 
 </Defs>
