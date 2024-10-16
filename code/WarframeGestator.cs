@@ -22,6 +22,7 @@ namespace WarframeModSequel
         protected float ticksToFinish = 1000;
         protected float currentTicks = 0;
         protected bool isOn = false;
+        protected int numParts = 0;
 
         // Stuff from Building_MechGestator
         private static Material FormingCycleBarFilledMat = SolidColorMaterials.SimpleSolidColorMaterial(new Color(0.98f, 0.46f, 0f));
@@ -85,11 +86,20 @@ namespace WarframeModSequel
         {
             if (isOn)
             {
-                currentTicks += 1;
-                Log.Message("Current ticks: " + currentTicks + " | Total ticks: " + ticksToFinish);
-                if (currentTicks > ticksToFinish)
+                if(numParts >= 3)
                 {
-                    craftPawnKind();
+                    currentTicks += 1;
+                    Log.Message("Current ticks: " + currentTicks + " | Total ticks: " + ticksToFinish);
+                    if (currentTicks > ticksToFinish)
+                    {
+                        craftPawnKind();
+                        isOn = false;
+                        pawnKindToCraft = null;
+                    }
+                }
+                else
+                {
+                    Log.Error("You need more warframe parts to start crafting");
                     isOn = false;
                     pawnKindToCraft = null;
                 }
@@ -195,10 +205,13 @@ namespace WarframeModSequel
             };
             toil.defaultCompleteMode = ToilCompleteMode.Instant;
 
-            // final action
+            // final action if any
             toil.AddFinishAction(delegate
             {
+                // nothing yet
             });
+
+            // We are done
             yield return toil;
         }
     }

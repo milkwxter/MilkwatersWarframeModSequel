@@ -9,8 +9,8 @@ namespace WarframeModSequel
 {
     public class SomaticLink : Building
     {
-        protected Pawn operatorPawn;
-        protected Pawn warframePawn;
+        protected Pawn operatorPawn = null;
+        protected Pawn warframePawn = null;
 
         public override IEnumerable<FloatMenuOption> GetFloatMenuOptions(Pawn myPawn)
         {
@@ -96,7 +96,7 @@ namespace WarframeModSequel
             {
                 // do special effects haha
                 Pawn operatorPawn = somaticLink.getOperatorPawn();
-                if (operatorPawn != null && operatorPawn.Map != null && operatorPawn.Position.InBounds(operatorPawn.Map))
+                if (operatorPawn != null && somaticLink.getWarframePawn() != null)
                 {
                     FleckMaker.Static(operatorPawn.Position, operatorPawn.Map, FleckDefOf.PsycastAreaEffect);
                     DefDatabase<SoundDef>.GetNamed("Milkwater_OperateEnd").PlayOneShot(new TargetInfo(operatorPawn.Position, operatorPawn.Map, false));
@@ -121,7 +121,6 @@ namespace WarframeModSequel
             this.pawns = building.Map.mapPawns.AllHumanlikeSpawned;
             this.forcePause = true;
             this.doCloseX = true;
-            this.doCloseButton = true;
             this.absorbInputAroundWindow = true;
         }
 

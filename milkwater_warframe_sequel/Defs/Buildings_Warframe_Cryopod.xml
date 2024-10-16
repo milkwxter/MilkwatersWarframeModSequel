@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <!--=============== Warframe Cryopod ====================-->
+    <ThingDef ParentName="BedBase">
+    <defName>WF_WarframeCryopod</defName>
+    <label>warframe cryopod</label>
+    <description>A Warframe Cryopod, designed to hold warframes for long periods of time. Warframes inside cryopods will gain increased regeneration speed.</description>
+    <thingClass>Building_Bed</thingClass>
+    <graphicData>
+      <texPath>Things/Building/Cryopod</texPath>
+      <graphicClass>Graphic_Multi</graphicClass>
+	  <color>(0.01, 0.01, 0.01)</color>
+      <shaderType>CutoutComplex</shaderType>
+      <drawSize>(2,2)</drawSize>
+	  <damageData>
+		<rect>(0,0.04,1,1.89)</rect>
+	  </damageData>
+    </graphicData>
+    <statBases>
+      <MaxHitPoints>300</MaxHitPoints>
+      <WorkToBuild>17500</WorkToBuild>
+      <Mass>75</Mass>
+      <Flammability>0.05</Flammability>
+      <BedRestEffectiveness>1.1</BedRestEffectiveness>
+      <Comfort>0.50</Comfort>
+      <ImmunityGainSpeedFactor>1.2</ImmunityGainSpeedFactor>
+    </statBases>
+    <size>(1,2)</size>
+    <costList>
+      <Steel>120</Steel>
+	  <ComponentIndustrial>8</ComponentIndustrial>
+    </costList>
+	<building>
+      <bed_showSleeperBody>True</bed_showSleeperBody>
+      <bed_healPerDay>10</bed_healPerDay>
+      <bed_defaultMedical>false</bed_defaultMedical>
+    </building>
+    <rotatable>true</rotatable>
+    <comps>
+      <li Class="CompProperties_Power">
+        <compClass>CompPowerTrader</compClass>
+        <basePowerConsumption>100</basePowerConsumption>
+      </li>
+    </comps>
+	<fillPercent>0.4</fillPercent>
+    <pathCost>60</pathCost>
+    <leaveResourcesWhenKilled>True</leaveResourcesWhenKilled>
+    <staticSunShadowHeight>0.17</staticSunShadowHeight>
+    <castEdgeShadows>True</castEdgeShadows>
+    <researchPrerequisites><li>VitalsMonitor</li></researchPrerequisites>
+    <constructionSkillPrerequisite>13</constructionSkillPrerequisite>
+    <techLevel>Spacer</techLevel>
+  </ThingDef>
+
+
+</Defs>
