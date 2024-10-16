@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+<!-- Custom Warframe Melees -->
+<ThingDef Name="WF_BaseMeleeWeapon" Abstract="True" ParentName="BaseWeapon">
+    <techLevel>Industrial</techLevel>
+    <smeltable>true</smeltable>
+    <burnableByRecipe>true</burnableByRecipe>
+    <thingCategories>
+      <li>WeaponsMelee</li>
+    </thingCategories>
+    <weaponClasses>
+      <li>Melee</li>
+    </weaponClasses>
+    <relicChance>1</relicChance>
+    <inspectorTabs>
+      <li>ITab_Art</li>
+    </inspectorTabs>
+    <tradeTags>
+      <li>WeaponMelee</li>
+    </tradeTags>
+	<comps>
+      <li>
+        <compClass>CompQuality</compClass>
+      </li>
+      <li Class="CompProperties_Art">
+        <nameMaker>NamerArtWeaponMelee</nameMaker>
+        <descriptionMaker>ArtDescription_WeaponMelee</descriptionMaker>
+        <minQualityForArtistic>Excellent</minQualityForArtistic>
+      </li>
+    </comps>
+    <thingClass>WarframeModSequel.WarframeMeleeThingWithComps</thingClass>
+  </ThingDef>
+
+  <ThingDef Name="WF_BaseMeleeWeapon_Sharp" ParentName="WF_BaseMeleeWeapon" Abstract="True">
+    <weaponClasses>
+      <li>MeleePiercer</li>
+    </weaponClasses>
+  </ThingDef>
+
+  <ThingDef Name="WF_BaseMeleeWeapon_Blunt" ParentName="BaseMeleeWeapon" Abstract="True">
+    <weaponClasses>
+      <li>MeleeBlunt</li>
+    </weaponClasses>
+  </ThingDef>
+
+</Defs>

@@ -3,7 +3,7 @@
 <Defs>
 
 <!-- Ceramic Dagger -->
-<ThingDef ParentName="BaseMeleeWeapon_Sharp_Quality">
+<ThingDef ParentName="BaseMeleeWeapon_Sharp_Quality" Class="WarframeModSequel.WarframeMeleeThingDef">
     <defName>Milkwater_Ceramic_Dagger</defName>
     <label>ceramic dagger</label>
     <description>This short blade weapon was built using ceramic. It has limited range but comes out fast.</description>
@@ -34,30 +34,28 @@
     </weaponClasses>
     <tools>
       <li>
-        <label>handle</label>
-        <capacities>
-          <li>Blunt</li>
-        </capacities>
-        <power>5</power>
-        <cooldownTime>1</cooldownTime>
-      </li>
-      <li>
         <label>point</label>
         <capacities>
-          <li>Stab</li>
+          <li>WF_Sharp</li>
         </capacities>
-        <power>9</power>
+        <power>8</power>
         <cooldownTime>1</cooldownTime>
       </li>
       <li>
         <label>edge</label>
         <capacities>
-          <li>Cut</li>
+          <li>WF_Sharp</li>
         </capacities>
-        <power>8</power>
+        <power>7</power>
         <cooldownTime>0.7</cooldownTime>
       </li>
     </tools>
+	
+	<hediffToAdd>WF_Generic_Puncture</hediffToAdd>
+	<hediffChance>0.06</hediffChance>
+	<critChance>0.30</critChance>
+	<critDamage>2.80</critDamage>
+	
   </ThingDef>
   
 </Defs>

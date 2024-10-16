@@ -119,9 +119,8 @@ namespace WarframeModSequel
                     center = barLoc,
                     size = new Vector2(1f, 0.2f), // Size of the bar
                     fillPercent = currentTicks / ticksToFinish,
-                    filledMat = SolidColorMaterials.SimpleSolidColorMaterial(new Color(0.98f, 0.46f, 0f)),
-                    unfilledMat = SolidColorMaterials.SimpleSolidColorMaterial(new Color(0f, 0f, 0f, 0f)),
-                    rotation = base.Rotation
+                    filledMat = SolidColorMaterials.SimpleSolidColorMaterial(Color.yellow),
+                    unfilledMat = SolidColorMaterials.SimpleSolidColorMaterial(new Color(0f, 0f, 0f, 255f))
                 };
                 GenDraw.DrawFillableBar(r);
             }
@@ -146,6 +145,14 @@ namespace WarframeModSequel
             StringBuilder stringBuilder = new StringBuilder();
 
             // Add custom variable to the inspect pane
+            if(pawnKindToCraft == null)
+            {
+                stringBuilder.AppendLine("Currently crafting: Nothing");
+            }
+            else
+            {
+                stringBuilder.AppendLine("Currently crafting: " + pawnKindToCraft.label + " warframe");
+            }
             stringBuilder.AppendLine("Warframe progress: " + currentTicks + "/" + ticksToFinish);
 
             return stringBuilder.ToString().TrimEnd();

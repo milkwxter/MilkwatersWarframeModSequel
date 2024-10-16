@@ -3,7 +3,7 @@
 <Defs>
 
   <!-- Machete -->
-  <ThingDef ParentName="BaseMeleeWeapon_Sharp_Quality">
+  <ThingDef ParentName="BaseMeleeWeapon_Sharp_Quality" Class="WarframeModSequel.WarframeMeleeThingDef">
     <defName>Milkwater_Machete</defName>
     <label>machete</label>
     <description>A ferocious melee weapon crafted by the Grineer and carried by their elite melee forces.</description>
@@ -35,17 +35,9 @@
     </weaponClasses>
     <tools>
       <li>
-        <label>handle</label>
-        <capacities>
-          <li>Blunt</li>
-        </capacities>
-        <power>9</power>
-        <cooldownTime>1.5</cooldownTime>
-      </li>
-      <li>
         <label>point</label>
         <capacities>
-          <li>Stab</li>
+          <li>WF_Sharp</li>
         </capacities>
         <power>14</power>
         <cooldownTime>1.5</cooldownTime>
@@ -53,7 +45,7 @@
       <li>
         <label>edge</label>
         <capacities>
-          <li>Cut</li>
+          <li>WF_Sharp</li>
         </capacities>
         <power>12</power>
         <cooldownTime>1.2</cooldownTime>
@@ -62,6 +54,12 @@
 	<weaponTags>
 		<li>GrineerLight</li>
     </weaponTags>
+	
+	<hediffToAdd>WF_Generic_Slash</hediffToAdd>
+	<hediffChance>0.15</hediffChance>
+	<critChance>0.10</critChance>
+	<critDamage>1.50</critDamage>
+	
   </ThingDef>
 
 </Defs>

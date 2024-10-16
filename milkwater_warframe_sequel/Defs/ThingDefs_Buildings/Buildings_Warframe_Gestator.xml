@@ -3,7 +3,7 @@
   
 <ThingDef ParentName="BuildingBase">
   <defName>WF_Warframe_Gestator</defName>
-  <label>Warframe Gestator</label>
+  <label>warframe gestator</label>
   <thingClass>WarframeModSequel.WarframeGestator</thingClass>
   
   <graphicData>

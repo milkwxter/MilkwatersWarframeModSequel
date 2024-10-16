@@ -17,6 +17,8 @@
 		<li>Hair_BaldOnly</li>
 		<li>Beard_NoBeardOnly</li>
 		<li>Skin_SheerWhite</li>
+		<li>AptitudeStrong_Melee</li>
+		<li>AptitudeStrong_Shooting</li>
     </genes>
   </XenotypeDef>
 

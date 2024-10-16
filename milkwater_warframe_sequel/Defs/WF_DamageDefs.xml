@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+<DamageDef ParentName="CutBase">
+    <defName>WF_Sharp</defName>
+    <workerClass>WarframeModSequel.DamageWorker_AddInjuryWarframe</workerClass>
+</DamageDef>
+
+<ToolCapacityDef>
+    <defName>WF_Sharp</defName>
+    <label>cut</label>
+</ToolCapacityDef>
+
+<ManeuverDef>
+    <defName>WF_Sharp</defName>
+    <requiredCapacity>WF_Sharp</requiredCapacity>
+    <verb>
+      <verbClass>Verb_MeleeAttackDamage</verbClass>
+      <meleeDamageDef>WF_Sharp</meleeDamageDef>
+    </verb>
+    <logEntryDef>MeleeAttack</logEntryDef>
+    <combatLogRulesHit>Maneuver_Slash_MeleeHit</combatLogRulesHit>
+    <combatLogRulesDeflect>Maneuver_Slash_MeleeDeflect</combatLogRulesDeflect>
+    <combatLogRulesMiss>Maneuver_Slash_MeleeMiss</combatLogRulesMiss>
+    <combatLogRulesDodge>Maneuver_Slash_MeleeDodge</combatLogRulesDodge>
+</ManeuverDef>
+
+</Defs>

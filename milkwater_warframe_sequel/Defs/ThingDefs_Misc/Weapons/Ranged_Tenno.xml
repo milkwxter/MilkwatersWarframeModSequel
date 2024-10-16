@@ -73,9 +73,9 @@
 	<comps Inherit="False">
       <li Class="CompProperties_EquippableAbilityReloadable">
         <abilityDef>WF_Alt_Fire_Corinth</abilityDef>
-        <maxCharges>1</maxCharges>
+        <maxCharges>2</maxCharges>
         <soundReload>Standard_Reload</soundReload>
-        <chargeNoun>Grenade</chargeNoun>
+        <chargeNoun>grenade</chargeNoun>
         <ammoDef>Steel</ammoDef>
         <ammoCountPerCharge>20</ammoCountPerCharge>
         <baseReloadTicks>120</baseReloadTicks>

@@ -7,7 +7,7 @@
     <description>Fires a grenade that will freeze in midair and then explode.</description>
     <iconPath>UI/UI_Corinth_AltFire</iconPath>
     <displayOrder>200</displayOrder>
-    <aiCanUse>true</aiCanUse>
+    <aiCanUse>false</aiCanUse>
     <verbProperties>
       <verbClass>Verb_CastAbility</verbClass>
       <range>30</range>
@@ -16,7 +16,7 @@
         </targetParams>
       <warmupTime>2.5</warmupTime>
 	  <forcedMissRadius>2</forcedMissRadius>
-      <soundCast>Milkwater_Shot_Corinth</soundCast>
+      <soundCast>Milkwater_ShotAlt_Corinth</soundCast>
     </verbProperties>
     <comps>
       <li Class="CompProperties_AbilityLaunchProjectile">

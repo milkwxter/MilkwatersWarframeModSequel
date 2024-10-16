@@ -3,7 +3,7 @@
   
 <ThingDef ParentName="BuildingBase">
   <defName>WF_Somatic_Link</defName>
-  <label>Somatic Link</label>
+  <label>somatic link</label>
   <thingClass>WarframeModSequel.SomaticLink</thingClass>
   
   <graphicData>
