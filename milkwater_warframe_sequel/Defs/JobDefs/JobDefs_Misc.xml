@@ -13,4 +13,11 @@
   <reportString>Operating warframe gestator.</reportString>
 </JobDef>
 
+<JobDef>
+  <defName>FillWarframeGestator</defName>
+  <driverClass>WarframeModSequel.JobDriver_FillWarframeGestator</driverClass>
+  <reportString>Filling warframe gestator.</reportString>
+  <carryThingAfterJob>true</carryThingAfterJob>
+</JobDef>
+
 </Defs>

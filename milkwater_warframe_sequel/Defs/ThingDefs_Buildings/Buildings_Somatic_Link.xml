@@ -17,6 +17,9 @@
   <passability>PassThroughOnly</passability>
   <hasInteractionCell>True</hasInteractionCell>
   <interactionCellOffset>(0,0,0)</interactionCellOffset>
+  <rotatable>false</rotatable>
+  <researchPrerequisites><li>WF_Warframes</li></researchPrerequisites>
+  <constructionSkillPrerequisite>9</constructionSkillPrerequisite>
 </ThingDef>
 
 </Defs>

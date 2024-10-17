@@ -60,6 +60,9 @@
         <drawSize>(5.6,4)</drawSize>
       </mechGestatorTopGraphic>
     </building>
+	
+    <researchPrerequisites><li>WF_Warframes</li></researchPrerequisites>
+    <constructionSkillPrerequisite>8</constructionSkillPrerequisite>
 </ThingDef>
 
 </Defs>

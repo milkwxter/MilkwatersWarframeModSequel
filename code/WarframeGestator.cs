@@ -11,6 +11,7 @@ using Verse;
 using Verse.AI;
 using Verse.Noise;
 using Verse.Sound;
+using static UnityEngine.GraphicsBuffer;
 
 namespace WarframeModSequel
 {
@@ -32,11 +33,24 @@ namespace WarframeModSequel
 
         public override IEnumerable<FloatMenuOption> GetFloatMenuOptions(Pawn myPawn)
         {
-            yield return new FloatMenuOption("Start warframe gestator", delegate
+            if( numParts >= 3)
             {
-                Job job = new Job(WFS_DefOf.UseWarframeGestator, this);
-                myPawn.jobs.TryTakeOrderedJob(job);
-            });
+                yield return new FloatMenuOption("Start warframe gestator", delegate
+                {
+                    Job job = new Job(WFS_DefOf.UseWarframeGestator, this);
+                    myPawn.jobs.TryTakeOrderedJob(job);
+                });
+            }
+            else
+            {
+                yield return new FloatMenuOption("Fill warframe gestator", delegate
+                {
+                    Thing part = this.Map.listerThings.ThingsOfDef(DefDatabase<ThingDef>.GetNamed("WarframeParts")).FirstOrDefault();
+                    Log.Message(part);
+                    Job job = new Job(WFS_DefOf.FillWarframeGestator, this, part);
+                    myPawn.jobs.TryTakeOrderedJob(job);
+                });
+            }
         }
 
         public PawnKindDef getPawnKindToCraft()
@@ -65,6 +79,21 @@ namespace WarframeModSequel
             this.isOn = newOn;
         }
 
+        public int getParts()
+        {
+            return numParts;
+        }
+
+        public void AddParts(Thing warframeParts)
+        {
+            int num = Mathf.Min(warframeParts.stackCount, 3 - numParts);
+            if (num > 0)
+            {
+                numParts += num;
+                warframeParts.SplitOff(num).Destroy();
+            }
+        }
+
         public void craftPawnKind()
         {
             // Generate the pawn with the player's faction
@@ -73,12 +102,8 @@ namespace WarframeModSequel
             // Spawn the pawn at the interaction cell
             GenSpawn.Spawn(pawn, this.InteractionCell, this.Map);
 
-            // reset everything
-            isOn = false;
-            currentTicks = 0;
-
             // special effects
-            FleckMaker.Static(pawn.Position, pawn.Map, FleckDefOf.Smoke);
+            FleckMaker.Static(pawn.Position, pawn.Map, FleckDefOf.TornadoDustPuff);
             DefDatabase<SoundDef>.GetNamed("Milkwater_WarframeDoneSteam").PlayOneShot(new TargetInfo(pawn.Position, pawn.Map, false));
         }
 
@@ -93,8 +118,12 @@ namespace WarframeModSequel
                     if (currentTicks > ticksToFinish)
                     {
                         craftPawnKind();
+
+                        // reset all the variables
                         isOn = false;
                         pawnKindToCraft = null;
+                        currentTicks = 0;
+                        numParts -= 3;
                     }
                 }
                 else
@@ -129,8 +158,9 @@ namespace WarframeModSequel
                     center = barLoc,
                     size = new Vector2(1f, 0.2f), // Size of the bar
                     fillPercent = currentTicks / ticksToFinish,
-                    filledMat = SolidColorMaterials.SimpleSolidColorMaterial(Color.yellow),
-                    unfilledMat = SolidColorMaterials.SimpleSolidColorMaterial(new Color(0f, 0f, 0f, 255f))
+                    filledMat = SolidColorMaterials.SimpleSolidColorMaterial(new Color(0.9f, 0.85f, 0.2f)),
+                    unfilledMat = SolidColorMaterials.SimpleSolidColorMaterial(new Color(0.3f, 0.3f, 0.3f)),
+                    margin = 0.1f
                 };
                 GenDraw.DrawFillableBar(r);
             }
@@ -164,6 +194,7 @@ namespace WarframeModSequel
                 stringBuilder.AppendLine("Currently crafting: " + pawnKindToCraft.label + " warframe");
             }
             stringBuilder.AppendLine("Warframe progress: " + currentTicks + "/" + ticksToFinish);
+            stringBuilder.AppendLine("Current parts stored: " + numParts + "/3");
 
             return stringBuilder.ToString().TrimEnd();
         }
@@ -212,6 +243,43 @@ namespace WarframeModSequel
             });
 
             // We are done
+            yield return toil;
+        }
+    }
+
+    public class JobDriver_FillWarframeGestator : JobDriver
+    {
+        public WarframeGestator warframeGestator => job.GetTarget(TargetIndex.A).Thing as WarframeGestator;
+
+        protected Thing parts => job.GetTarget(TargetIndex.B).Thing;
+
+        public override bool TryMakePreToilReservations(bool errorOnFailed)
+        {
+            if (pawn.Reserve(warframeGestator, job, 1, -1, null, errorOnFailed))
+            {
+                return pawn.Reserve(parts, job, 1, -1, null, errorOnFailed);
+            }
+            return false;
+        }
+
+        protected override IEnumerable<Toil> MakeNewToils()
+        {
+            this.FailOnDespawnedNullOrForbidden(TargetIndex.A);
+            this.FailOnBurningImmobile(TargetIndex.A);
+            job.count = 3 - warframeGestator.getParts();
+            Toil reserveParts = Toils_Reserve.Reserve(TargetIndex.B);
+            yield return reserveParts;
+            yield return Toils_Goto.GotoThing(TargetIndex.B, PathEndMode.ClosestTouch).FailOnDespawnedNullOrForbidden(TargetIndex.B).FailOnSomeonePhysicallyInteracting(TargetIndex.B);
+            yield return Toils_Haul.StartCarryThing(TargetIndex.B, putRemainderInQueue: false, subtractNumTakenFromJobCount: false).FailOnDestroyedNullOrForbidden(TargetIndex.B);
+            yield return Toils_Haul.CheckForGetOpportunityDuplicate(reserveParts, TargetIndex.B, TargetIndex.None, takeFromValidStorage: true);
+            yield return Toils_Goto.GotoThing(TargetIndex.A, PathEndMode.Touch);
+            Toil toil = ToilMaker.MakeToil("MakeNewToils");
+            toil.initAction = delegate
+            {
+                warframeGestator.AddParts(parts);
+                DefDatabase<SoundDef>.GetNamed("Milkwater_LoadWarframeParts").PlayOneShot(new TargetInfo(pawn.Position, pawn.Map, false));
+            };
+            toil.defaultCompleteMode = ToilCompleteMode.Instant;
             yield return toil;
         }
     }

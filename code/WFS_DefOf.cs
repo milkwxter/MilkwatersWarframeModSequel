@@ -13,6 +13,7 @@ namespace WarframeModSequel
     {
         public static JobDef UseSomaticLink;
         public static JobDef UseWarframeGestator;
+        public static JobDef FillWarframeGestator;
         public static EffecterDef OperatingSomaticLink;
         static WFS_DefOf()
         {
