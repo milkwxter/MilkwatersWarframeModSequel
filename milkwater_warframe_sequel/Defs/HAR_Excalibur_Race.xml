@@ -23,7 +23,7 @@
 			  <customHeadDrawSize>(0.85, 0.85)</customHeadDrawSize>
 			</alienPartGenerator>
 			<validBeds>
-			  <li>WF_WarframeCryopod</li>
+			  <li>WF_Warframe_Cryopod</li>
 			</validBeds>
 		</generalSettings>
 		

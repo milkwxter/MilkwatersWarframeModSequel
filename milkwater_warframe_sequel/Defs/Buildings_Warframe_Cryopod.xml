@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Defs>
+  
+<ThingDef ParentName="BuildingBase">
+    <defName>WF_Warframe_Cryopod</defName>
+    <label>warframe cryopod</label>
+    <thingClass>Building_Bed</thingClass>
+	<description>A cozy mattress and sheets on a frame for resting.</description>
+    <graphicData>
+      <texPath>Things/Building/Cryopod</texPath>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <shaderType>CutoutComplex</shaderType>
+      <drawSize>(2,2)</drawSize>
+      <damageData>
+        <rect>(0,0.05,1,1.95)</rect>
+      </damageData>
+    </graphicData>
+    <size>(1,2)</size>
+	
+    <altitudeLayer>Building</altitudeLayer>
+    <passability>PassThroughOnly</passability>
+    <defaultPlacingRot>South</defaultPlacingRot>
+    <uiOrder>2020</uiOrder>
+    <building>
+      <buildingTags>
+        <li>Bed</li>
+      </buildingTags>
+      <bed_showSleeperBody>true</bed_showSleeperBody>
+      <bed_healPerDay>8</bed_healPerDay>
+    </building>
+	
+	<comps>
+      <li>
+        <compClass>CompQuality</compClass>
+      </li>
+	  <li Class="CompProperties_Art">
+        <nameMaker>NamerArtFurniture</nameMaker>
+        <descriptionMaker>ArtDescription_Furniture</descriptionMaker>
+        <minQualityForArtistic>Excellent</minQualityForArtistic>
+      </li>
+	  <li Class="CompProperties_AssignableToPawn">
+        <drawAssignmentOverlay>false</drawAssignmentOverlay>
+        <compClass>CompAssignableToPawn_Bed</compClass>
+      </li>
+    </comps>
+	
+    <inspectorTabs>
+      <li>ITab_Art</li>
+    </inspectorTabs>
+	
+	<statBases>
+	  <MaxHitPoints>140</MaxHitPoints>
+      <Beauty>1</Beauty>
+      <WorkToBuild>800</WorkToBuild>
+      <Mass>30</Mass>
+      <BedRestEffectiveness>1</BedRestEffectiveness>
+      <Flammability>1.0</Flammability>
+      <ImmunityGainSpeedFactor>1.07</ImmunityGainSpeedFactor>
+      <SurgerySuccessChanceFactor>1</SurgerySuccessChanceFactor>
+      <BirthRitualQualityOffset MayRequire="Ludeon.RimWorld.Biotech">2</BirthRitualQualityOffset>
+    </statBases>
+    <fillPercent>0.5</fillPercent>
+    <pathCost>42</pathCost>
+    <staticSunShadowHeight>0.17</staticSunShadowHeight>
+    <castEdgeShadows>True</castEdgeShadows>
+    <techLevel>Industrial</techLevel>
+    <researchPrerequisites>
+      <li>WF_Warframes</li>
+    </researchPrerequisites>
+	<designationCategory>Production</designationCategory>
+    <uiIconScale>0.90</uiIconScale>
+	
+</ThingDef>
+
+</Defs>
