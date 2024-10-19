@@ -26,7 +26,7 @@
         <li>Bed</li>
       </buildingTags>
       <bed_showSleeperBody>true</bed_showSleeperBody>
-      <bed_healPerDay>8</bed_healPerDay>
+      <bed_healPerDay>20</bed_healPerDay>
     </building>
 	
 	<comps>
@@ -53,10 +53,10 @@
       <Beauty>1</Beauty>
       <WorkToBuild>800</WorkToBuild>
       <Mass>30</Mass>
-      <BedRestEffectiveness>1</BedRestEffectiveness>
       <Flammability>1.0</Flammability>
-      <ImmunityGainSpeedFactor>1.07</ImmunityGainSpeedFactor>
-      <SurgerySuccessChanceFactor>1</SurgerySuccessChanceFactor>
+      <BedRestEffectiveness>1.2</BedRestEffectiveness>
+      <ImmunityGainSpeedFactor>1.2</ImmunityGainSpeedFactor>
+      <SurgerySuccessChanceFactor>1.2</SurgerySuccessChanceFactor>
       <BirthRitualQualityOffset MayRequire="Ludeon.RimWorld.Biotech">2</BirthRitualQualityOffset>
     </statBases>
     <fillPercent>0.5</fillPercent>

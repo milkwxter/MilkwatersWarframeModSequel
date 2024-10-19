@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <!--============================== warframe ============================-->
+  <AlienRace.AlienBackstoryDef>
+    <defName>Warframe_WarframeCommon00</defName>
+    <title>gestated warframe</title>
+    <titleShort>warframe</titleShort>
+    <description>[PAWN_nameDef] was gestated in a machine.\nThey were made to fight.</description>
+    <slot>Childhood</slot>
+    <spawnCategories>
+		<li>WarframeCommon</li>
+	</spawnCategories>
+	<requiredWorkTags>
+      <li>Violent</li>
+    </requiredWorkTags>
+  </AlienRace.AlienBackstoryDef>
+  
+  <AlienRace.AlienBackstoryDef>
+    <defName>Warframe_WarframeCommon01</defName>
+    <title>warframe</title>
+    <titleShort>warframe</titleShort>
+    <description>[PAWN_nameDef] is a powerful warframe. The only way to control a warframe is with a somatic link.</description>
+    <slot>Adulthood</slot>
+    <spawnCategories>
+		<li>WarframeCommon</li>
+	</spawnCategories>
+	<requiredWorkTags>
+      <li>Violent</li>
+    </requiredWorkTags>
+  </AlienRace.AlienBackstoryDef>
+
+</Defs>

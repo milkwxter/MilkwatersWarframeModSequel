@@ -27,8 +27,6 @@
 			</validBeds>
 		</generalSettings>
 		
-		
-		
 		<raceRestriction>
 			<canReproduce>false</canReproduce>
 			<xenotypeList>
@@ -37,6 +35,7 @@
 			<onlyUseRaceRestrictedXenotypes>true</onlyUseRaceRestrictedXenotypes>
 		</raceRestriction>
 	</alienRace>
+		
 </AlienRace.ThingDef_AlienRace>
 
 <PawnKindDef ParentName="BasePlayerPawnKind">
@@ -58,12 +57,20 @@
          <li Class="VanillaPsycastsExpanded.PawnKindAbilityExtension_Psycasts">
             <implantDef>VPE_PsycastAbilityImplant</implantDef>
             <initialLevel>1</initialLevel>
-            <statUpgradePoints>2~6</statUpgradePoints>
+            <statUpgradePoints>2~2</statUpgradePoints>
             <unlockedPaths>
-               <VPE_WF_Excalibur>1~2|2~4</VPE_WF_Excalibur>
+               <VPE_WF_Excalibur>1~2|1~2</VPE_WF_Excalibur>
             </unlockedPaths>
          </li>
     </modExtensions>
+	
+	<backstoryFiltersOverride>
+		<li>
+			<categories>
+				<li>WarframeCommon</li>
+			</categories>
+		</li>
+    </backstoryFiltersOverride>
 
 </PawnKindDef>
 

@@ -4,21 +4,24 @@
 
   <XenotypeDef>
     <defName>WarframeXenotype</defName>
-    <label>warframe</label>
-    <description>Warframe</description>
-    <descriptionShort>Warframe</descriptionShort>
-    <iconPath>Icon/Icon_Grineer</iconPath>
-    <inheritable>true</inheritable>
+    <label>tenno</label>
+    <description>We took the twisted few that had returned from that place. We built a frame around them, a conduit of their affliction. Gave them the weapons of the old ways. Gun and blade. A new warrior, a new code was born. These rejects, these Tenno, became our saviors. Warrior-Gods cast in steel and fury striking our enemies in a way they could never comprehend.</description>
+    <descriptionShort>Warrior-Gods cast in steel and fury striking our enemies in a way they could never comprehend.</descriptionShort>
+    <iconPath>Icon/Icon_Tenno</iconPath>
+    <inheritable>false</inheritable>
     <nameMaker>NamerPersonGrineerMale</nameMaker>
     <nameMakerFemale>NamerPersonGrineerFemale</nameMakerFemale>
     <chanceToUseNameMaker>1</chanceToUseNameMaker>
-    <combatPowerFactor>1.0</combatPowerFactor>
+    <combatPowerFactor>10.0</combatPowerFactor>
     <genes>
 		<li>Hair_BaldOnly</li>
 		<li>Beard_NoBeardOnly</li>
 		<li>Skin_SheerWhite</li>
 		<li>AptitudeStrong_Melee</li>
 		<li>AptitudeStrong_Shooting</li>
+		<li>AptitudeTerrible_Social</li>
+		<li>WFS_Ascetic</li>
+		<li>WFS_Transference</li>
     </genes>
   </XenotypeDef>
 

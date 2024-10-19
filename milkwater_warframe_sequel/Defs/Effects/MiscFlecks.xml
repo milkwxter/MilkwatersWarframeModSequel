@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
 
-  <!-- 3 generic damage flecks -->
+  <!-- Generic stuff -->
   <FleckDef ParentName="FleckBase">
     <defName>WFS_Dust_Fleck</defName>
     <altitudeLayer>MoteOverhead</altitudeLayer>
@@ -11,6 +11,19 @@
       <texPath>Things/Effects/dust</texPath>
       <shaderType>Transparent</shaderType>
 	  <drawSize>0.5</drawSize>
+    </graphicData>
+  </FleckDef>
+  
+  <FleckDef ParentName="FleckBase">
+    <defName>WFS_Steam_Fleck</defName>
+    <altitudeLayer>MoteOverhead</altitudeLayer>
+    <fadeInTime>0.10</fadeInTime>
+    <solidTime>0.30</solidTime>
+    <fadeOutTime>0.70</fadeOutTime>
+    <graphicData>
+      <texPath>Things/Effects/steam</texPath>
+      <shaderType>Transparent</shaderType>
+	  <drawSize>3.0</drawSize>
     </graphicData>
   </FleckDef>
   

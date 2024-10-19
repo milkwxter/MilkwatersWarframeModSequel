@@ -94,16 +94,22 @@ namespace WarframeModSequel
             }
         }
 
-        public void craftPawnKind()
+        public void CraftPawnKind()
         {
-            // Generate the pawn with the player's faction
+            // Generate the pawn
             Pawn pawn = PawnGenerator.GeneratePawn(pawnKindToCraft, Faction.OfPlayer);
+
+            // set his age to 18
+            pawn.ageTracker.AgeBiologicalTicks = (long)(18 * 3600000L);
+            pawn.ageTracker.AgeChronologicalTicks = (long)(18 * 3600000L);
+
+            // set his backstory
 
             // Spawn the pawn at the interaction cell
             GenSpawn.Spawn(pawn, this.InteractionCell, this.Map);
 
             // special effects
-            FleckMaker.Static(pawn.Position, pawn.Map, FleckDefOf.TornadoDustPuff);
+            FleckMaker.Static(pawn.Position, pawn.Map, DefDatabase<FleckDef>.GetNamed("WFS_Steam_Fleck"));
             DefDatabase<SoundDef>.GetNamed("Milkwater_WarframeDoneSteam").PlayOneShot(new TargetInfo(pawn.Position, pawn.Map, false));
         }
 
@@ -117,7 +123,7 @@ namespace WarframeModSequel
                     Log.Message("Current ticks: " + currentTicks + " | Total ticks: " + ticksToFinish);
                     if (currentTicks > ticksToFinish)
                     {
-                        craftPawnKind();
+                        CraftPawnKind();
 
                         // reset all the variables
                         isOn = false;

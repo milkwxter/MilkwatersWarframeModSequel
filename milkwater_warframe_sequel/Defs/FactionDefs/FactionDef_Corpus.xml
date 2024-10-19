@@ -89,5 +89,73 @@
     </pawnGroupMakers>
 	
 	</FactionDef>
+	
+	<FactionDef ParentName="WF_FactionCorpusBase">
+	<defName>WF_FactionPerrinSequence</defName>
+	<description>A collective of brilliant and powerful merchants, splintered from the Corpus. Their goal is to restore order by bringing prosperity and direction to the violent world they study.</description>
+    <leaderTitle>senior executive</leaderTitle>
+	<label>perrin sequence node</label>
+    <allowedArrivalTemperatureRange>-40~45</allowedArrivalTemperatureRange>
+	<colorSpectrum>
+      <li>(0.65, 0.85, 0.90)</li>
+      <li>(0.70, 0.90, 0.95)</li>
+    </colorSpectrum>
+    <factionIconPath>Icon/Icon_Perrin_Sequence</factionIconPath>
+    <naturalEnemy>false</naturalEnemy>
+	<maxConfigurableAtWorldCreation>5</maxConfigurableAtWorldCreation>
+    <configurationListOrderPriority>101</configurationListOrderPriority>
+	<startingCountAtWorldCreation>1</startingCountAtWorldCreation>
+	
+	<caravanTraderKinds>
+      <li>Caravan_PerrinSequence_BulkGoods</li>
+    </caravanTraderKinds>
+    <visitorTraderKinds>
+      <li>Visitor_PerrinSequence_Standard</li>
+    </visitorTraderKinds>
+    <baseTraderKinds>
+      <li>Base_PerrinSequence_Standard</li>
+    </baseTraderKinds>
+	
+	<pawnGroupMakers Inherit="False">
+		<li>
+			<!-- Normal fights, standard mix -->
+			<commonality>100</commonality>
+			<kindDef>Combat</kindDef>
+			<options>
+				<WF_PSCorpusPawn_Light>10</WF_PSCorpusPawn_Light>
+				<WF_PSCorpusPawn_Heavy>0.5</WF_PSCorpusPawn_Heavy>
+				<WF_Mech_Moa>2</WF_Mech_Moa>
+				<WF_PSCorpusPawn_Leader>0.01</WF_PSCorpusPawn_Leader>
+			</options>
+		</li>
+      <li>
+        <kindDef>Settlement</kindDef>
+        <options>
+			<WF_PSCorpusPawn_Light>10</WF_PSCorpusPawn_Light>
+			<WF_PSCorpusPawn_Heavy>1</WF_PSCorpusPawn_Heavy>
+			<WF_Mech_Moa>2</WF_Mech_Moa>
+			<WF_PSCorpusPawn_Leader>0.01</WF_PSCorpusPawn_Leader>
+		</options>
+      </li>
+	  <li>
+        <kindDef>Trader</kindDef>
+        <traders>
+          <WF_PSCorpusPawn_Trader>1</WF_PSCorpusPawn_Trader>
+        </traders>
+        <carriers>
+          <Muffalo>6</Muffalo>
+          <Dromedary>5</Dromedary>
+          <Alpaca>2.5</Alpaca>
+          <Elephant>2</Elephant>
+        </carriers>
+        <guards>
+          <WF_PSCorpusPawn_Light>10</WF_PSCorpusPawn_Light>
+		  <WF_Mech_Moa>2</WF_Mech_Moa>
+          <WF_PSCorpusPawn_Heavy>0.5</WF_PSCorpusPawn_Heavy>
+        </guards>
+      </li>
+    </pawnGroupMakers>
+	
+  </FactionDef>
   
 </Defs>

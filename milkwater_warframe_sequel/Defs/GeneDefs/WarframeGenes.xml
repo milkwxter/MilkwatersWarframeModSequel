@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Defs>
+
+	<GeneDef>
+		<defName>WFS_Ascetic</defName>
+		<label>warframe asceticism</label>
+		<description>Carriers of this gene do not have to worry about comfort or beauty, and generally do not care about anything.</description>
+		<iconPath>UI/Genes/Gene_WF_Ascetic</iconPath>
+		<displayCategory>Miscellaneous</displayCategory>
+		<biostatCpx>10</biostatCpx>
+		<biostatMet>-10</biostatMet>
+		<disablesNeeds>
+			<li>Indoors</li>
+			<li>Outdoors</li>
+			<li>Comfort</li>
+			<li>Beauty</li>
+			<li>DrugDesire</li>
+			<li>RoomSize</li>
+			<li>Mood</li>
+			<li>Joy</li>
+		</disablesNeeds>
+	</GeneDef>
+	
+	<GeneDef>
+		<defName>WFS_Transference</defName>
+		<label>warframe transference</label>
+		<description>Carriers of this gene do not have to eat or sleep, instead being powered by a unique energy called Transference.</description>
+		<iconPath>UI/Genes/Gene_WF_Transference</iconPath>
+		<displayCategory>Miscellaneous</displayCategory>
+		<biostatCpx>10</biostatCpx>
+		<biostatMet>-10</biostatMet>
+		<disablesNeeds>
+			<li>Food</li>
+			<li>Rest</li>
+		</disablesNeeds>
+	</GeneDef>
+
+</Defs>

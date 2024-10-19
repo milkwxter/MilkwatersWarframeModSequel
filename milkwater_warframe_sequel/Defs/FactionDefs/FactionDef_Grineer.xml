@@ -100,7 +100,7 @@
   
   <FactionDef ParentName="WF_FactionGrineerBase">
 	<defName>WF_FactionSteelMeridian</defName>
-	<description>The steel meridian.</description>
+	<description>Led by a battle-hardened Grineer deserter, the Steel Meridian fight a guerrilla war against a vast enemy. They are sworn protectors of what little remains of the colonies.</description>
     <leaderTitle>defector leader</leaderTitle>
 	<label>steel meridian outcrop</label>
     <allowedArrivalTemperatureRange>-40~45</allowedArrivalTemperatureRange>
