@@ -4,7 +4,7 @@
 
   <!-- Acrid -->
   <ThingDef ParentName="BaseHumanMakeableGun">
-    <defName>Milkwater_Acrid</defName>
+    <defName>Milkwater_Acrid_Shotgun</defName>
     <label>acrid</label>
     <description>The Acrid fires a volley of acidic-infused needles.</description>
     <graphicData>

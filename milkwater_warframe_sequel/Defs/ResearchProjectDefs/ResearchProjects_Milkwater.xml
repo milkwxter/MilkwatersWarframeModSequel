@@ -144,6 +144,21 @@
 			<li>Gunsmithing</li>
 		</prerequisites>
 		<researchViewX>2.1</researchViewX>
+		<researchViewY>4.1</researchViewY>
+	</ResearchProjectDef>
+	
+	<!--=============== thrax weaponry ==============-->
+	<ResearchProjectDef>
+		<defName>WF_ThraxWeaponry</defName>
+		<label>thrax weaponry</label>
+		<description>Craft thrax weaponry, which are gilded weapons thought up by a powerful emporer, Dominus Thrax.</description>
+		<baseCost>1000</baseCost>
+		<techLevel>Spacer</techLevel>
+		<tab>RT_Warframe</tab>
+		<prerequisites>
+			<li>Gunsmithing</li>
+		</prerequisites>
+		<researchViewX>2.1</researchViewX>
 		<researchViewY>4.6</researchViewY>
 	</ResearchProjectDef>
 	

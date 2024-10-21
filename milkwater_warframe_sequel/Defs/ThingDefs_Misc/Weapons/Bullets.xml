@@ -223,6 +223,72 @@
 	
   </ThingDef>
   
+  <ThingDef ParentName="ProjectileWarframe" Class="WarframeModSequel.ProjectileWarframeDef">
+    <defName>Milkwater_Knife_Despair</defName>
+    <label>despair knife</label>
+    <graphicData>
+      <texPath>Things/Projectile/Milkwater_Thrown_Despair</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <projectile>
+      <damageDef>Arrow</damageDef>
+      <damageAmountBase>16</damageAmountBase>
+      <stoppingPower>0.10</stoppingPower>
+      <armorPenetrationBase>1.0</armorPenetrationBase>
+      <speed>70</speed>
+    </projectile>
+	
+	<hediffToAdd>WF_Generic_Puncture</hediffToAdd>
+	<hediffChance>0.16</hediffChance>
+	<critChance>0.16</critChance>
+	<critDamage>1.6</critDamage>
+	
+  </ThingDef>
+  
+  <ThingDef ParentName="ProjectileWarframe" Class="WarframeModSequel.ProjectileWarframeDef">
+    <defName>Milkwater_Bullet_Strun</defName>
+    <label>strun blast</label>
+    <graphicData>
+      <texPath>Things/Projectile/Bullet_Shotgun</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <projectile>
+      <damageDef>Bullet</damageDef>
+      <damageAmountBase>24</damageAmountBase>
+      <stoppingPower>1</stoppingPower>
+      <armorPenetrationBase>0.4</armorPenetrationBase>
+      <speed>70</speed>
+    </projectile>
+	
+	<hediffToAdd>WF_Generic_Impact</hediffToAdd>
+	<hediffChance>0.05</hediffChance>
+	<critChance>0.08</critChance>
+	<critDamage>1.50</critDamage>
+	
+  </ThingDef>
+  
+  <ThingDef ParentName="ProjectileWarframe" Class="WarframeModSequel.ProjectileWarframeDef">
+    <defName>Milkwater_Bullet_Strun_Wraith</defName>
+    <label>strun wraith blast</label>
+    <graphicData>
+      <texPath>Things/Projectile/Bullet_Shotgun</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <projectile>
+      <damageDef>Bullet</damageDef>
+      <damageAmountBase>25</damageAmountBase>
+      <stoppingPower>1.5</stoppingPower>
+      <armorPenetrationBase>0.6</armorPenetrationBase>
+      <speed>70</speed>
+    </projectile>
+	
+	<hediffToAdd>WF_Generic_Impact</hediffToAdd>
+	<hediffChance>0.12</hediffChance>
+	<critChance>0.18</critChance>
+	<critDamage>2.20</critDamage>
+	
+  </ThingDef>
+  
   <!-- Lasers -->
   <ThingDef ParentName="WF_Bullet_LaserGeneric" Class="WarframeModSequel.LaserBeamWarframeDef">
 		<defName>Milkwater_Laser_Dera</defName>
