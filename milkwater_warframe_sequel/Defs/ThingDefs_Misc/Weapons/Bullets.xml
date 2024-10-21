@@ -93,7 +93,7 @@
   
   <ThingDef ParentName="ProjectileWarframe" Class="WarframeModSequel.ProjectileWarframeDef">
     <defName>Milkwater_Bullet_Acrid</defName>
-    <label>acrid bullet</label>
+    <label>acrid blast</label>
     <graphicData>
       <texPath>Things/Projectile/Milkwater_Bullet_Acrid</texPath>
       <graphicClass>Graphic_Single</graphicClass>
@@ -135,6 +135,94 @@
 	
   </ThingDef>
   
+  <ThingDef ParentName="ProjectileWarframe" Class="WarframeModSequel.ProjectileWarframeDef">
+    <defName>Milkwater_Bullet_Braton</defName>
+    <label>braton bullet</label>
+    <graphicData>
+      <texPath>Things/Projectile/Bullet_Small</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <projectile>
+      <damageDef>Bullet</damageDef>
+      <damageAmountBase>11</damageAmountBase>
+      <stoppingPower>0.4</stoppingPower>
+      <armorPenetrationBase>0.4</armorPenetrationBase>
+      <speed>80</speed>
+    </projectile>
+	
+	<hediffToAdd>WF_Generic_Slash</hediffToAdd>
+	<hediffChance>0.06</hediffChance>
+	<critChance>0.12</critChance>
+	<critDamage>1.60</critDamage>
+	
+  </ThingDef>
+  
+  <ThingDef ParentName="ProjectileWarframe" Class="WarframeModSequel.ProjectileWarframeDef">
+    <defName>Milkwater_Bullet_Lato</defName>
+    <label>lato bullet</label>
+    <graphicData>
+      <texPath>Things/Projectile/Bullet_Small</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <projectile>
+      <damageDef>Bullet</damageDef>
+      <damageAmountBase>8</damageAmountBase>
+      <stoppingPower>0.2</stoppingPower>
+      <armorPenetrationBase>0.2</armorPenetrationBase>
+      <speed>80</speed>
+    </projectile>
+	
+	<hediffToAdd>WF_Generic_Slash</hediffToAdd>
+	<hediffChance>0.06</hediffChance>
+	<critChance>0.10</critChance>
+	<critDamage>1.80</critDamage>
+	
+  </ThingDef>
+  
+  <ThingDef ParentName="ProjectileWarframe" Class="WarframeModSequel.ProjectileWarframeDef">
+    <defName>Milkwater_Bullet_Kestrel</defName>
+    <label>kestrel boomerang</label>
+    <graphicData>
+      <texPath>Things/Projectile/Milkwater_Thrown_Kestrel</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <projectile>
+      <damageDef>Blunt</damageDef>
+      <damageAmountBase>23</damageAmountBase>
+      <stoppingPower>4</stoppingPower>
+      <armorPenetrationBase>0.1</armorPenetrationBase>
+      <speed>50</speed>
+    </projectile>
+	
+	<hediffToAdd>WF_Generic_Impact</hediffToAdd>
+	<hediffChance>0.10</hediffChance>
+	<critChance>0.10</critChance>
+	<critDamage>2.00</critDamage>
+	
+  </ThingDef>
+  
+  <ThingDef ParentName="ProjectileWarframe" Class="WarframeModSequel.ProjectileWarframeDef">
+    <defName>Milkwater_Bullet_Spectre</defName>
+    <label>spectre blast</label>
+    <graphicData>
+      <texPath>Things/Projectile/Bullet_Shotgun</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <projectile>
+      <damageDef>Bullet</damageDef>
+      <damageAmountBase>22</damageAmountBase>
+      <stoppingPower>1</stoppingPower>
+      <armorPenetrationBase>0.4</armorPenetrationBase>
+      <speed>70</speed>
+    </projectile>
+	
+	<hediffToAdd>WF_Generic_Impact</hediffToAdd>
+	<hediffChance>0.26</hediffChance>
+	<critChance>0.18</critChance>
+	<critDamage>1.90</critDamage>
+	
+  </ThingDef>
+  
   <!-- Lasers -->
   <ThingDef ParentName="WF_Bullet_LaserGeneric" Class="WarframeModSequel.LaserBeamWarframeDef">
 		<defName>Milkwater_Laser_Dera</defName>
@@ -155,6 +243,50 @@
 		<hediffChance>0.22</hediffChance>
 		<critChance>0.08</critChance>
 		<critDamage>1.6</critDamage>
+		
+	</ThingDef>
+  
+  <ThingDef ParentName="WF_Bullet_LaserGeneric" Class="WarframeModSequel.LaserBeamWarframeDef">
+		<defName>Milkwater_Laser_Cestra</defName>
+		<label>cestra laser</label>
+		<textures>
+			<li>Things/Projectile/Shot_LaserSmall</li>
+		</textures>
+		<seam>0</seam>
+		<causefireChance>0.05</causefireChance>
+		<projectile>
+			<damageDef>Bullet</damageDef>
+			<damageAmountBase>6</damageAmountBase>
+			<armorPenetrationBase>0.40</armorPenetrationBase>
+			<stoppingPower>0.1</stoppingPower>
+		</projectile>
+	
+		<hediffToAdd>WF_Generic_Puncture</hediffToAdd>
+		<hediffChance>0.20</hediffChance>
+		<critChance>0.06</critChance>
+		<critDamage>1.6</critDamage>
+		
+	</ThingDef>
+	
+	<ThingDef ParentName="WF_Bullet_LaserGeneric" Class="WarframeModSequel.LaserBeamWarframeDef">
+		<defName>Milkwater_Laser_Arca_Plasmor</defName>
+		<label>arca plasmor laser</label>
+		<textures>
+			<li>Things/Projectile/Shot_LaserSmall</li>
+		</textures>
+		<seam>0</seam>
+		<causefireChance>0.00</causefireChance>
+		<projectile>
+			<damageDef>Bullet</damageDef>
+			<damageAmountBase>8</damageAmountBase>
+			<armorPenetrationBase>0.40</armorPenetrationBase>
+			<stoppingPower>0.5</stoppingPower>
+		</projectile>
+	
+		<hediffToAdd>WF_Generic_Radiation</hediffToAdd>
+		<hediffChance>0.28</hediffChance>
+		<critChance>0.22</critChance>
+		<critDamage>1.60</critDamage>
 		
 	</ThingDef>
   

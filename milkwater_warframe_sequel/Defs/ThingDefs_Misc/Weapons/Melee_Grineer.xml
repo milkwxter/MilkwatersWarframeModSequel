@@ -39,7 +39,7 @@
         <capacities>
           <li>WF_Sharp</li>
         </capacities>
-        <power>14</power>
+        <power>16</power>
         <cooldownTime>1.5</cooldownTime>
       </li>
       <li>
@@ -47,7 +47,7 @@
         <capacities>
           <li>WF_Sharp</li>
         </capacities>
-        <power>12</power>
+        <power>15</power>
         <cooldownTime>1.2</cooldownTime>
       </li>
     </tools>

@@ -4,7 +4,7 @@
 
 <!--===== Dera =====-->
   <ThingDef ParentName="BaseHumanMakeableGun">
-    <defName>Milkwater_Dera</defName>
+    <defName>Milkwater_Dera_Laser</defName>
     <label>dera</label>
     <description>The Dera is a repeater that fires super-heated plasma.</description>
     <graphicData>
@@ -74,6 +74,159 @@
     <weaponTags>
 		<li>CorpusLight</li>
       <li>LongShots</li>
+	  <li>SpacerGun</li>
+    </weaponTags>
+  </ThingDef>
+  
+  <!--===== Cestra =====-->
+  <ThingDef ParentName="BaseHumanMakeableGun">
+    <defName>Milkwater_Cestra_Laser</defName>
+    <label>cestra</label>
+    <description>Compact and deadly, the Cestra discharges bolts of energy at an increasingly rapid rate.</description>
+    <graphicData>
+      <texPath>Things/Weapons/Milkwater_Cestra</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>1</drawSize>
+    </graphicData>
+    <soundInteract>Interact_Autopistol</soundInteract>
+    <recipeMaker>
+      <recipeUsers Inherit="False">
+        <li>TableOrokin</li>
+      </recipeUsers>
+      <researchPrerequisite>WF_CorpusWeaponry</researchPrerequisite>
+      <skillRequirements>
+        <Crafting>6</Crafting>
+      </skillRequirements>
+    </recipeMaker>
+    <statBases>
+      <WorkToMake>20000</WorkToMake>
+      <Mass>3</Mass>
+      <AccuracyTouch>0.55</AccuracyTouch>
+      <AccuracyShort>0.50</AccuracyShort>
+      <AccuracyMedium>0.45</AccuracyMedium>
+      <AccuracyLong>0.35</AccuracyLong>
+      <RangedWeapon_Cooldown>1.30</RangedWeapon_Cooldown>
+    </statBases>
+    <costList>
+      <Plasteel>40</Plasteel>
+	  <ComponentIndustrial>3</ComponentIndustrial>
+    </costList>
+    <verbs>
+      <li>
+        <verbClass>Verb_Shoot</verbClass>
+        <hasStandardCommand>true</hasStandardCommand>
+        <defaultProjectile>Milkwater_Laser_Cestra</defaultProjectile>
+        <warmupTime>1.2</warmupTime>
+		<burstShotCount>6</burstShotCount>
+        <ticksBetweenBurstShots>9</ticksBetweenBurstShots>
+        <range>20</range>
+        <soundCast>Milkwater_Shot_Cestra</soundCast>
+        <muzzleFlashScale>14</muzzleFlashScale>
+      </li>
+    </verbs>
+    <tools>
+      <li>
+        <label>grip</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>5</power>
+        <cooldownTime>1.2</cooldownTime>
+      </li>
+	  <li>
+        <label>barrel</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>6</power>
+        <cooldownTime>1.3</cooldownTime>
+      </li>
+    </tools>
+    <weaponClasses>
+      <li>Ranged</li>
+      <li>RangedLight</li>
+	  <li>ShortShots</li>
+    </weaponClasses>
+    <weaponTags>
+	  <li>CorpusLight</li>
+      <li>ShortShots</li>
+	  <li>SpacerGun</li>
+    </weaponTags>
+  </ThingDef>
+  
+  <!--===== Cestra =====-->
+  <ThingDef ParentName="BaseHumanMakeableGun">
+    <defName>Milkwater_Arca_Plasmor_Laser</defName>
+    <label>arca plasmor</label>
+    <description>Stagger targets with blasts from this Corpus engineered plasma shotgun. Surviving enemies are consumed with radiation.</description>
+    <graphicData>
+      <texPath>Things/Weapons/Milkwater_Arca_Plasmor</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>1.2</drawSize>
+    </graphicData>
+    <soundInteract>Interact_Shotgun</soundInteract>
+	<equippedAngleOffset>30</equippedAngleOffset>
+    <recipeMaker>
+      <recipeUsers Inherit="False">
+        <li>TableOrokin</li>
+      </recipeUsers>
+      <researchPrerequisite>WF_CorpusWeaponry</researchPrerequisite>
+      <skillRequirements>
+        <Crafting>7</Crafting>
+      </skillRequirements>
+    </recipeMaker>
+    <statBases>
+      <WorkToMake>30000</WorkToMake>
+      <Mass>7</Mass>
+      <AccuracyTouch>0.65</AccuracyTouch>
+      <AccuracyShort>0.60</AccuracyShort>
+      <AccuracyMedium>0.50</AccuracyMedium>
+      <AccuracyLong>0.40</AccuracyLong>
+      <RangedWeapon_Cooldown>2.20</RangedWeapon_Cooldown>
+    </statBases>
+    <costList>
+      <Plasteel>90</Plasteel>
+	  <ComponentIndustrial>5</ComponentIndustrial>
+    </costList>
+    <verbs>
+      <li>
+        <verbClass>Verb_Shoot</verbClass>
+        <hasStandardCommand>true</hasStandardCommand>
+        <defaultProjectile>Milkwater_Laser_Arca_Plasmor</defaultProjectile>
+        <warmupTime>1.9</warmupTime>
+		<burstShotCount>6</burstShotCount>
+        <ticksBetweenBurstShots>0</ticksBetweenBurstShots>
+        <range>12</range>
+        <soundCast>Milkwater_Shot_Arca_Plasmor</soundCast>
+        <muzzleFlashScale>14</muzzleFlashScale>
+      </li>
+    </verbs>
+    <tools>
+      <li>
+        <label>grip</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>5</power>
+        <cooldownTime>1.2</cooldownTime>
+      </li>
+	  <li>
+        <label>barrel</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>6</power>
+        <cooldownTime>1.3</cooldownTime>
+      </li>
+    </tools>
+    <weaponClasses>
+      <li>Ranged</li>
+      <li>RangedHeavy</li>
+	  <li>ShortShots</li>
+    </weaponClasses>
+    <weaponTags>
+	  <li>CorpusHeavy</li>
+      <li>ShortShots</li>
 	  <li>SpacerGun</li>
     </weaponTags>
   </ThingDef>

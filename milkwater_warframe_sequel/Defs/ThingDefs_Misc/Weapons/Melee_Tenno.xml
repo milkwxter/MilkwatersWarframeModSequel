@@ -58,4 +58,61 @@
 	
   </ThingDef>
   
+  <!-- Skana -->
+<ThingDef ParentName="BaseMeleeWeapon_Sharp_Quality" Class="WarframeModSequel.WarframeMeleeThingDef">
+    <defName>Milkwater_Skana</defName>
+    <label>skana</label>
+    <description>Before all other weapons, Tenno master the Skana. This simple blade becomes immensely powerful in the hands of a master. For Tenno, it is the foundation of their fighting style and a pillar of their culture.</description>
+    <graphicData>
+      <texPath>Things/Weapons/Milkwater_Skana</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>1</drawSize>
+    </graphicData>
+    <soundInteract>Milkwater_Interact_Melee</soundInteract>
+	<equippedAngleOffset>-40</equippedAngleOffset>
+    <recipeMaker>
+      <recipeUsers Inherit="False">
+        <li>TableOrokin</li>
+      </recipeUsers>
+      <researchPrerequisite>WF_TennoWeaponry</researchPrerequisite>
+      <skillRequirements>
+        <Crafting>6</Crafting>
+      </skillRequirements>
+    </recipeMaker>
+    <statBases>
+      <WorkToMake>15000</WorkToMake>
+      <Mass>2</Mass>
+    </statBases>
+    <costList>
+      <Plasteel>40</Plasteel>
+    </costList>
+	<weaponClasses>
+      <li>Melee</li>
+    </weaponClasses>
+    <tools>
+      <li>
+        <label>point</label>
+        <capacities>
+          <li>WF_Sharp</li>
+        </capacities>
+        <power>15</power>
+        <cooldownTime>1.4</cooldownTime>
+      </li>
+      <li>
+        <label>edge</label>
+        <capacities>
+          <li>WF_Sharp</li>
+        </capacities>
+        <power>14</power>
+        <cooldownTime>1.1</cooldownTime>
+      </li>
+    </tools>
+	
+	<hediffToAdd>WF_Generic_Slash</hediffToAdd>
+	<hediffChance>0.16</hediffChance>
+	<critChance>0.05</critChance>
+	<critDamage>1.5</critDamage>
+	
+  </ThingDef>
+  
 </Defs>

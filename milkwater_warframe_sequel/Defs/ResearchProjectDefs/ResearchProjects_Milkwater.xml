@@ -117,7 +117,7 @@
 		<researchViewY>4.6</researchViewY>
 	</ResearchProjectDef>
 	
-	<!--=============== scaldra weaponry ==============-->
+	<!--=============== sentient weaponry ==============-->
 	<ResearchProjectDef>
 		<defName>WF_SentientWeaponry</defName>
 		<label>sentient weaponry</label>
@@ -130,6 +130,21 @@
 		</prerequisites>
 		<researchViewX>1</researchViewX>
 		<researchViewY>5.1</researchViewY>
+	</ResearchProjectDef>
+	
+	<!--=============== stalker weaponry ==============-->
+	<ResearchProjectDef>
+		<defName>WF_StalkerWeaponry</defName>
+		<label>stalker weaponry</label>
+		<description>Craft stalker weaponry, which are cruel weapons made for assassins.</description>
+		<baseCost>1000</baseCost>
+		<techLevel>Spacer</techLevel>
+		<tab>RT_Warframe</tab>
+		<prerequisites>
+			<li>Gunsmithing</li>
+		</prerequisites>
+		<researchViewX>2.1</researchViewX>
+		<researchViewY>4.6</researchViewY>
 	</ResearchProjectDef>
 	
 	<!--=============== wraith arsenal ==============-->
