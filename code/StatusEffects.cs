@@ -3,6 +3,9 @@ using System.Linq;
 using Verse.AI;
 using Verse;
 using UnityEngine;
+using System.Collections.Generic;
+using Verse.Noise;
+using Verse.Sound;
 
 namespace WarframeModSequel
 {
@@ -149,6 +152,72 @@ namespace WarframeModSequel
             // Get some buildup
             HediffDef toxicBuildupDef = HediffDef.Named("ToxicBuildup");
             HealthUtility.AdjustSeverity(pawn, toxicBuildupDef, 0.15f);
+        }
+    }
+
+    public class Hediff_WF_Electricity : HediffWithComps
+    {
+        public override void Tick()
+        {
+            base.Tick();
+
+            if (base.pawn.IsHashIntervalTick(180)) // Check every 180 ticks
+            {
+                // make sure pawn is still living
+                if (base.pawn.Dead)
+                {
+                    base.pawn.health.RemoveHediff(this);
+                    return;
+                }
+
+                // Do a stun
+                if (pawn != null)
+                    pawn.stances.stunner.StunFor(GenTicks.SecondsToTicks(1f), null, addBattleLog: false);
+
+                // do a fleck
+                FleckMaker.AttachedOverlay(base.pawn, DefDatabase<FleckDef>.GetNamed("WFS_Electricity_Fleck"), new Vector3(0f, 0f, 0f));
+            }
+        }
+
+        public override void PostAdd(DamageInfo? dinfo)
+        {
+            base.PostAdd(dinfo);
+
+            // Throw a mote
+            MoteMaker.ThrowText(pawn.DrawPos, pawn.Map, "Electricity proc", Color.magenta, 3.65f);
+
+            // Do a sound
+            DefDatabase<SoundDef>.GetNamed("Milkwater_Crit").PlayOneShot(new TargetInfo(pawn.Position, pawn.Map, false));
+
+            // create a damage info
+            DamageInfo zapped = new DamageInfo(DamageDefOf.Burn, 10f, 1f, -1f, null);
+            List<Pawn> pawnsToZap = new List<Pawn>();
+
+            // Shock nearby targets
+            foreach (IntVec3 cell in GenRadial.RadialCellsAround(pawn.Position, 5f, true))
+            {
+                if (!cell.InBounds(pawn.Map)) continue;
+                List<Thing> things = cell.GetThingList(pawn.Map);
+                foreach (Thing thing in things)
+                {
+                    if (thing is Pawn zapee)
+                    {
+                        // Make sure only target only living friendlies (to the guy who got zapped)
+                        if (zapee.Faction != null && zapee.Faction.HostileTo(pawn.Faction)) continue;
+
+                        // add them to the zap list
+                        pawnsToZap.Add(zapee);
+                    }
+                }
+            }
+
+            // zapping time
+            foreach (Pawn pawnToZap in pawnsToZap)
+            {
+                pawnToZap.TakeDamage(zapped);
+                FleckMaker.AttachedOverlay(pawnToZap, DefDatabase<FleckDef>.GetNamed("WFS_Shock_Fleck"), new Vector3(0f, 0f, 0f));
+                DefDatabase<SoundDef>.GetNamed("Milkwater_Zap").PlayOneShot(new TargetInfo(pawnToZap.Position, pawnToZap.Map, false));
+            }
         }
     }
 

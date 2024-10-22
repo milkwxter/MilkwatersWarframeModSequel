@@ -51,6 +51,18 @@
     </graphicData>
   </FleckDef>
   
+  <FleckDef ParentName="FleckBase">
+    <defName>WFS_Electricity_Fleck</defName>
+    <altitudeLayer>MoteOverhead</altitudeLayer>
+    <solidTime>0.30</solidTime>
+    <fadeOutTime>0.30</fadeOutTime>
+    <graphicData>
+      <texPath>Things/Effects/statusEffects/electricity</texPath>
+      <shaderType>MoteGlow</shaderType>
+	  <drawSize>0.5</drawSize>
+    </graphicData>
+  </FleckDef>
+  
   <!-- 6 combined elemental damage flecks -->
   <FleckDef ParentName="FleckBase">
     <defName>WFS_Radiation_Fleck</defName>

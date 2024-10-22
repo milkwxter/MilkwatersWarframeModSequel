@@ -27,4 +27,17 @@
     </graphicData>
   </FleckDef>
   
+  <FleckDef ParentName="FleckBase">
+    <defName>WFS_Shock_Fleck</defName>
+    <altitudeLayer>MoteOverhead</altitudeLayer>
+    <fadeInTime>0.10</fadeInTime>
+    <solidTime>0.30</solidTime>
+    <fadeOutTime>0.30</fadeOutTime>
+    <graphicData>
+      <texPath>Things/Effects/shock</texPath>
+      <shaderType>MoteGlow</shaderType>
+	  <drawSize>1.0</drawSize>
+    </graphicData>
+  </FleckDef>
+  
   </Defs>

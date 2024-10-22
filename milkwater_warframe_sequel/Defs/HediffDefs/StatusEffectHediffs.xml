@@ -89,6 +89,21 @@
 		</comps>
 </HediffDef>
 
+<HediffDef ParentName="RoleStatBuff">
+		<defName>WF_Generic_Electricity</defName>
+		<label>electricity proc</label>
+		<description>This pawn has been zapped by electricity, stunning them and damaging enemies nearby.</description>
+		<hediffClass>WarframeModSequel.Hediff_WF_Electricity</hediffClass>
+		<defaultLabelColor>(0.8, 0.1, 1)</defaultLabelColor>
+		<isBad>True</isBad>
+		<comps>
+		  <li Class="HediffCompProperties_Disappears">
+			<showRemainingTime>True</showRemainingTime>
+			<disappearsAfterTicks>600</disappearsAfterTicks>
+		  </li>
+		</comps>
+</HediffDef>
+
 <!-- 6 combination status effects -->
 <HediffDef ParentName="RoleStatBuff">
 		<defName>WF_Generic_Radiation</defName>
