@@ -120,4 +120,50 @@
 		</comps>
 </HediffDef>
 
+<HediffDef ParentName="RoleStatBuff">
+		<defName>WF_Generic_Viral</defName>
+		<label>viral proc</label>
+		<description>This pawn's body has been plauged by a strange virus, making them take increased damage from all sources.</description>
+		<hediffClass>WarframeModSequel.Hediff_WF_Viral</hediffClass>
+		<defaultLabelColor>(1, 0.60, 0.90)</defaultLabelColor>
+		<isBad>True</isBad>
+		<comps>
+		  <li Class="HediffCompProperties_Disappears">
+			<showRemainingTime>True</showRemainingTime>
+			<disappearsAfterTicks>600</disappearsAfterTicks>
+		  </li>
+		</comps>
+		<stages>
+		  <li>
+			<statOffsets>
+			  <IncomingDamageFactor>1.50</IncomingDamageFactor>
+			</statOffsets>
+		  </li>
+        </stages>
+</HediffDef>
+
+<HediffDef ParentName="RoleStatBuff">
+		<defName>WF_Generic_Corrosive</defName>
+		<label>corrosive proc</label>
+		<description>This pawn's armor has been massively corroded, leading to incredibly decreased armor rating.</description>
+		<hediffClass>WarframeModSequel.Hediff_WF_Corrosive</hediffClass>
+		<defaultLabelColor>(0.55, 1, 0)</defaultLabelColor>
+		<isBad>True</isBad>
+		<comps>
+		  <li Class="HediffCompProperties_Disappears">
+			<showRemainingTime>True</showRemainingTime>
+			<disappearsAfterTicks>600</disappearsAfterTicks>
+		  </li>
+		</comps>
+		<stages>
+		  <li>
+			<statOffsets>
+			  <ArmorRating_Sharp>-2.00</ArmorRating_Sharp>
+			  <ArmorRating_Blunt>-2.00</ArmorRating_Blunt>
+			  <ArmorRating_Heat>-2.00</ArmorRating_Heat>
+			</statOffsets>
+		  </li>
+        </stages>
+</HediffDef>
+
 </Defs>

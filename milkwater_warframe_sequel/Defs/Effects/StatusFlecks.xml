@@ -76,5 +76,29 @@
     </graphicData>
   </FleckDef>
   
+  <FleckDef ParentName="FleckBase">
+    <defName>WFS_Viral_Fleck</defName>
+    <altitudeLayer>MoteOverhead</altitudeLayer>
+    <solidTime>0.30</solidTime>
+    <fadeOutTime>0.30</fadeOutTime>
+    <graphicData>
+      <texPath>Things/Effects/statusEffects/viral</texPath>
+      <shaderType>MoteGlow</shaderType>
+	  <drawSize>0.5</drawSize>
+    </graphicData>
+  </FleckDef>
+  
+  <FleckDef ParentName="FleckBase">
+    <defName>WFS_Corrosive_Fleck</defName>
+    <altitudeLayer>MoteOverhead</altitudeLayer>
+    <solidTime>0.30</solidTime>
+    <fadeOutTime>0.30</fadeOutTime>
+    <graphicData>
+      <texPath>Things/Effects/statusEffects/corrosive</texPath>
+      <shaderType>MoteGlow</shaderType>
+	  <drawSize>0.5</drawSize>
+    </graphicData>
+  </FleckDef>
+  
   
 </Defs>

@@ -284,4 +284,64 @@ namespace WarframeModSequel
             MoteMaker.ThrowText(base.pawn.DrawPos, base.pawn.Map, "Radiation proc", Color.yellow, 3.65f);
         }
     }
+
+    public class Hediff_WF_Viral : HediffWithComps
+    {
+        public override void Tick()
+        {
+            base.Tick();
+
+            if (pawn.IsHashIntervalTick(180)) // Check every 180 ticks
+            {
+                // make sure pawn can actually attack first
+                if (base.pawn.DeadOrDowned)
+                {
+                    base.pawn.health.RemoveHediff(this);
+                    return;
+                }
+
+                // do a fleck
+                FleckMaker.AttachedOverlay(base.pawn, DefDatabase<FleckDef>.GetNamed("WFS_Viral_Fleck"), new Vector3(0f, 0f, 0f));
+
+            }
+        }
+
+        public override void PostAdd(DamageInfo? dinfo)
+        {
+            base.PostAdd(dinfo);
+
+            // Throw a mote
+            MoteMaker.ThrowText(base.pawn.DrawPos, base.pawn.Map, "Viral proc", Color.magenta, 3.65f);
+        }
+    }
+
+    public class Hediff_WF_Corrosive : HediffWithComps
+    {
+        public override void Tick()
+        {
+            base.Tick();
+
+            if (pawn.IsHashIntervalTick(180)) // Check every 180 ticks
+            {
+                // make sure pawn can actually attack first
+                if (base.pawn.DeadOrDowned)
+                {
+                    base.pawn.health.RemoveHediff(this);
+                    return;
+                }
+
+                // do a fleck
+                FleckMaker.AttachedOverlay(base.pawn, DefDatabase<FleckDef>.GetNamed("WFS_Corrosive_Fleck"), new Vector3(0f, 0f, 0f));
+
+            }
+        }
+
+        public override void PostAdd(DamageInfo? dinfo)
+        {
+            base.PostAdd(dinfo);
+
+            // Throw a mote
+            MoteMaker.ThrowText(base.pawn.DrawPos, base.pawn.Map, "Corrosive proc", Color.green, 3.65f);
+        }
+    }
 }

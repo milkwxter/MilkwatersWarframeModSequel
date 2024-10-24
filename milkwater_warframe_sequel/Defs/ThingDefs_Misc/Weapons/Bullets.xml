@@ -289,6 +289,50 @@
 	
   </ThingDef>
   
+  <ThingDef ParentName="ProjectileWarframe" Class="WarframeModSequel.ProjectileWarframeDef">
+    <defName>Milkwater_Arrow_Bubonico</defName>
+    <label>bubonico barb</label>
+    <graphicData>
+      <texPath>Things/Projectile/Milkwater_Bullet_Infested_Green</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <projectile>
+      <damageDef>Arrow</damageDef>
+      <damageAmountBase>12</damageAmountBase>
+      <stoppingPower>0.30</stoppingPower>
+      <armorPenetrationBase>0.45</armorPenetrationBase>
+      <speed>60</speed>
+    </projectile>
+	
+	<hediffToAdd>WF_Generic_Toxin</hediffToAdd>
+	<hediffChance>0.09</hediffChance>
+	<critChance>0.25</critChance>
+	<critDamage>2.3</critDamage>
+	
+  </ThingDef>
+  
+  <ThingDef ParentName="ProjectileWarframe" Class="WarframeModSequel.ProjectileWarframeDef">
+    <defName>Milkwater_Arrow_Tysis</defName>
+    <label>tysis dart</label>
+    <graphicData>
+      <texPath>Things/Projectile/Milkwater_Bullet_Infested_Green</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <projectile>
+      <damageDef>Arrow</damageDef>
+      <damageAmountBase>17</damageAmountBase>
+      <stoppingPower>0.05</stoppingPower>
+      <armorPenetrationBase>0.10</armorPenetrationBase>
+      <speed>60</speed>
+    </projectile>
+	
+	<hediffToAdd>WF_Generic_Corrosive</hediffToAdd>
+	<hediffChance>0.50</hediffChance>
+	<critChance>0.03</critChance>
+	<critDamage>1.5</critDamage>
+	
+  </ThingDef>
+  
   <!-- Lasers -->
   <ThingDef ParentName="WF_Bullet_LaserGeneric" Class="WarframeModSequel.LaserBeamWarframeDef">
 		<defName>Milkwater_Laser_Dera</defName>
