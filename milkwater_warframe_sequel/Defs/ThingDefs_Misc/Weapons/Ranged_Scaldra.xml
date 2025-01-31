@@ -77,7 +77,7 @@
     </weaponTags>
   </ThingDef>
   
-  <!--===== AX-52 =====-->
+  <!--===== Spectre =====-->
   <ThingDef ParentName="BaseHumanMakeableGun">
     <defName>Milkwater_Spectre</defName>
     <label>spectre</label>
@@ -122,6 +122,81 @@
         <soundCast>Milkwater_Shot_Spectre</soundCast>
         <soundCastTail>GunTail_Heavy</soundCastTail>
         <muzzleFlashScale>14</muzzleFlashScale>
+      </li>
+    </verbs>
+    <tools>
+      <li>
+        <label>handle</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>9</power>
+        <cooldownTime>1.7</cooldownTime>
+      </li>
+      <li>
+        <label>barrel</label>
+        <capacities>
+          <li>Blunt</li>
+          <li>Poke</li>
+        </capacities>
+        <power>9</power>
+        <cooldownTime>1.7</cooldownTime>
+      </li>
+    </tools>
+    <weaponClasses>
+      <li>ShortShots</li>
+    </weaponClasses>
+    <weaponTags>
+      <li>ShortShots</li>
+	  <li>SpacerGun</li>
+    </weaponTags>
+  </ThingDef>
+  
+  <!--===== Tekna 9MM =====-->
+  <ThingDef ParentName="BaseHumanMakeableGun">
+    <defName>Milkwater_Tekna_NineMM</defName>
+    <label>tekna 9mm</label>
+    <description>An ancient and reliable pistol.</description>
+    <graphicData>
+      <texPath>Things/Weapons/Milkwater_Tekna_NineMM</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>0.8</drawSize>
+    </graphicData>
+    <soundInteract>Interact_Rifle</soundInteract>
+    <recipeMaker>
+      <recipeUsers Inherit="False">
+        <li>TableOrokin</li>
+      </recipeUsers>
+      <researchPrerequisite>WF_ScaldraWeaponry</researchPrerequisite>
+      <skillRequirements>
+        <Crafting>5</Crafting>
+      </skillRequirements>
+    </recipeMaker>
+    <statBases>
+      <WorkToMake>15000</WorkToMake>
+      <Mass>2</Mass>
+      <AccuracyTouch>0.75</AccuracyTouch>
+      <AccuracyShort>0.65</AccuracyShort>
+      <AccuracyMedium>0.50</AccuracyMedium>
+      <AccuracyLong>0.40</AccuracyLong>
+      <RangedWeapon_Cooldown>0.70</RangedWeapon_Cooldown>
+    </statBases>
+    <costList>
+      <Steel>40</Steel>
+	  <ComponentIndustrial>2</ComponentIndustrial>
+    </costList>
+    <verbs>
+      <li>
+        <verbClass>Verb_Shoot</verbClass>
+        <hasStandardCommand>true</hasStandardCommand>
+        <defaultProjectile>Milkwater_Bullet_Tekna_NineMM</defaultProjectile>
+        <warmupTime>0.8</warmupTime>
+        <range>20</range>
+        <burstShotCount>2</burstShotCount>
+        <ticksBetweenBurstShots>9</ticksBetweenBurstShots>
+        <soundCast>Milkwater_Shot_Tekna_NineMM</soundCast>
+        <soundCastTail>GunTail_Light</soundCastTail>
+        <muzzleFlashScale>9</muzzleFlashScale>
       </li>
     </verbs>
     <tools>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+<AlienRace.ThingDef_AlienRace Name="WarframeBaseRace" ParentName="Human">
+    <defName>WarframeBaseRace</defName>
+    <label>warframe</label>
+    <description>A mysterious weaponized armor controlled solely by the Tenno. Through the Warframe, Tenno can cheat death, channel the forbidden Void energies and face scores of enemies without fatigue.</description>
+	<thingClass>WarframeModSequel.WarframePawn</thingClass>
+	<alienRace>
+		<graphicPaths>
+			<body>Races/Excalibur/Bodies/</body>
+			<head>
+				<path>Races/Excalibur/Heads/</path>
+			</head>
+		</graphicPaths>
+		
+		<generalSettings>
+			<alienPartGenerator>
+			  <headTypes Inherit="false">
+				<li>Male_AverageNormal</li>
+				<li>Female_AverageNormal</li>
+			  </headTypes>
+			  <customHeadDrawSize>(0.85, 0.85)</customHeadDrawSize>
+			</alienPartGenerator>
+			<validBeds>
+			  <li>WF_Warframe_Cryopod</li>
+			</validBeds>
+		</generalSettings>
+		
+		<raceRestriction>
+			<canReproduce>false</canReproduce>
+			<xenotypeList>
+				<li>WarframeXenotype</li>
+			</xenotypeList>
+			<onlyUseRaceRestrictedXenotypes>true</onlyUseRaceRestrictedXenotypes>
+		</raceRestriction>
+	</alienRace>
+		
+</AlienRace.ThingDef_AlienRace>
+
+</Defs>

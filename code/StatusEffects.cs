@@ -28,7 +28,9 @@ namespace WarframeModSequel
             base.PostAdd(dinfo);
 
             Pawn hediffedPawn = base.pawn;
-            Map map = hediffedPawn.Map;
+            if (hediffedPawn == null)
+                return;
+            Map hediffedPawnMap = hediffedPawn.Map;
 
             // Throw a mote
             MoteMaker.ThrowText(base.pawn.DrawPos, base.pawn.Map, "Impact proc", Color.white, 3.65f);
@@ -38,8 +40,8 @@ namespace WarframeModSequel
             PawnFlyer pawnFlyer = PawnFlyer.MakeFlyer(ThingDefOf.PawnFlyer, hediffedPawn, hediffedPawn.Position, null, SoundDefOf.Pawn_Melee_Punch_HitBuilding_Generic, false, null, null, hediffedPawn);
             if (pawnFlyer != null)
             {
-                FleckMaker.ThrowDustPuff(hediffedPawn.Position.ToVector3Shifted() + Gen.RandomHorizontalVector(0.5f), map, 2f);
-                GenSpawn.Spawn(pawnFlyer, hediffedPawn.Position, map);
+                FleckMaker.ThrowDustPuff(hediffedPawn.Position.ToVector3Shifted() + Gen.RandomHorizontalVector(0.5f), hediffedPawnMap, 2f);
+                GenSpawn.Spawn(pawnFlyer, hediffedPawn.Position, hediffedPawnMap);
             }
 
             // Do a stun

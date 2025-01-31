@@ -28,7 +28,7 @@
     <defName>Milkwater_Bullet_Corinth_Alt_Fire</defName>
     <label>corinth airburst nade</label>
     <graphicData>
-      <texPath>Things/Projectile/Milkwater_Bomb_Corinth</texPath>
+      <texPath>Things/Projectile/Milkwater_Bullet_Bomb</texPath>
       <graphicClass>Graphic_Single</graphicClass>
     </graphicData>
 	<thingClass>Projectile_Explosive</thingClass>
@@ -330,6 +330,116 @@
 	<hediffChance>0.50</hediffChance>
 	<critChance>0.03</critChance>
 	<critDamage>1.5</critDamage>
+	
+  </ThingDef>
+  
+  <ThingDef ParentName="ProjectileWarframe" Class="WarframeModSequel.ProjectileWarframeDef">
+    <defName>Milkwater_Bullet_Marelok</defName>
+    <label>marelok bullet</label>
+    <graphicData>
+      <texPath>Things/Projectile/Bullet_Small</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <projectile>
+      <damageDef>Bullet</damageDef>
+      <damageAmountBase>21</damageAmountBase>
+      <stoppingPower>0.33</stoppingPower>
+      <armorPenetrationBase>0.4</armorPenetrationBase>
+      <speed>70</speed>
+    </projectile>
+	
+	<hediffToAdd>WF_Generic_Impact</hediffToAdd>
+	<hediffChance>0.30</hediffChance>
+	<critChance>0.15</critChance>
+	<critDamage>1.50</critDamage>
+	
+  </ThingDef>
+  
+  <ThingDef ParentName="ProjectileWarframe" Class="WarframeModSequel.ProjectileWarframeDef">
+    <defName>Milkwater_Bullet_Marelok_Vaykor</defName>
+    <label>vaykor marelok bullet</label>
+    <graphicData>
+      <texPath>Things/Projectile/Bullet_Small</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <projectile>
+      <damageDef>Bullet</damageDef>
+      <damageAmountBase>22</damageAmountBase>
+      <stoppingPower>0.4</stoppingPower>
+      <armorPenetrationBase>0.5</armorPenetrationBase>
+      <speed>70</speed>
+    </projectile>
+	
+	<hediffToAdd>WF_Generic_Impact</hediffToAdd>
+	<hediffChance>0.35</hediffChance>
+	<critChance>0.20</critChance>
+	<critDamage>1.50</critDamage>
+	
+  </ThingDef>
+  
+  <ThingDef ParentName="ProjectileWarframe" Class="WarframeModSequel.ProjectileWarframeDef">
+    <defName>Milkwater_Bullet_Rogga</defName>
+    <label>rogga bullet</label>
+    <graphicData>
+      <texPath>Things/Projectile/Bullet_Small</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <projectile>
+      <damageDef>Bullet</damageDef>
+      <damageAmountBase>27</damageAmountBase>
+      <stoppingPower>1</stoppingPower>
+      <armorPenetrationBase>1</armorPenetrationBase>
+      <speed>60</speed>
+    </projectile>
+	
+	<hediffToAdd>WF_Generic_Puncture</hediffToAdd>
+	<hediffChance>0.07</hediffChance>
+	<critChance>0.10</critChance>
+	<critDamage>2.00</critDamage>
+	
+  </ThingDef>
+  
+  <ThingDef ParentName="ProjectileWarframe" Class="WarframeModSequel.ProjectileWarframeDef">
+    <defName>Milkwater_Bullet_Tekna_NineMM</defName>
+    <label>tekna 9mm bullet</label>
+    <graphicData>
+      <texPath>Things/Projectile/Bullet_Small</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <projectile>
+      <damageDef>Bullet</damageDef>
+      <damageAmountBase>13</damageAmountBase>
+      <stoppingPower>0.1</stoppingPower>
+      <armorPenetrationBase>0.25</armorPenetrationBase>
+      <speed>70</speed>
+    </projectile>
+	
+	<hediffToAdd>WF_Generic_Puncture</hediffToAdd>
+	<hediffChance>0.20</hediffChance>
+	<critChance>0.10</critChance>
+	<critDamage>2.00</critDamage>
+	
+  </ThingDef>
+  
+  <ThingDef ParentName="ProjectileWarframe" Class="WarframeModSequel.ProjectileWarframeDef">
+    <defName>Milkwater_Bullet_Tonkor</defName>
+    <label>tonkor nade</label>
+    <graphicData>
+      <texPath>Things/Projectile/Milkwater_Bullet_Bomb</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+	<thingClass>Projectile_Explosive</thingClass>
+    <projectile>
+      <damageDef>Bomb</damageDef>
+      <explosionRadius>4</explosionRadius>
+	  <damageAmountBase>22</damageAmountBase>
+	  <speed>30</speed>
+    </projectile>
+	
+	<hediffToAdd>WF_Generic_Impact</hediffToAdd>
+	<hediffChance>0.10</hediffChance>
+	<critChance>0.25</critChance>
+	<critDamage>2.50</critDamage>
 	
   </ThingDef>
   

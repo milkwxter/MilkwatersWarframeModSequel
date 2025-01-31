@@ -1,5 +1,8 @@
-﻿using RimWorld;
+﻿using AlienRace;
+using RimWorld;
 using System.Collections.Generic;
+using System.Drawing;
+using System.Linq;
 using UnityEngine;
 using Verse;
 using Verse.AI;
@@ -141,7 +144,7 @@ namespace WarframeModSequel
             float y = 0f;
             foreach (Pawn pawn in pawns)
             {
-                if (pawn.def.defName == "WarframeBaseRace")
+                if (WFS_Globals.warframeRaces.Contains(ThingDef_AlienRace.Named(pawn.def.defName)))
                 {
                     // Draw a portrait of the pawn
                     Rect portraitRect = new Rect(0, y, 30f, 30f);
@@ -149,7 +152,7 @@ namespace WarframeModSequel
 
                     // Draw the name of the pawn beside it
                     Rect pawnRect = new Rect(30, y, viewRect.width - 30f, 30f);
-                    Widgets.Label(pawnRect, pawn.Name.ToStringFull + ", " + pawn.genes.Xenotype.label);
+                    Widgets.Label(pawnRect, pawn.Name.ToStringFull + ", " + pawn.def.defName + " " + pawn.genes.xenotypeName);
 
                     // Draw a button
                     if (Widgets.ButtonText(new Rect(viewRect.width - 100f, y, 100f, 30f), "Operate"))

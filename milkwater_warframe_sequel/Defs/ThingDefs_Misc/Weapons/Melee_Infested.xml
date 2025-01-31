@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<Defs>
+
+  <!-- Mios -->
+  <ThingDef ParentName="BaseMeleeWeapon_Sharp_Quality" Class="WarframeModSequel.WarframeMeleeThingDef">
+    <defName>Milkwater_Mios</defName>
+    <label>mios</label>
+    <description>This bone-forged sword includes a tendon-whip to distract and maim the enemy.</description>
+    <graphicData>
+      <texPath>Things/Weapons/Milkwater_Mios</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>1</drawSize>
+    </graphicData>
+    <soundInteract>Milkwater_Interact_Infested</soundInteract>
+    <recipeMaker>
+      <recipeUsers Inherit="False">
+        <li>TableOrokin</li>
+      </recipeUsers>
+      <researchPrerequisite>WF_InfestedWeaponry</researchPrerequisite>
+      <skillRequirements>
+        <Crafting>6</Crafting>
+      </skillRequirements>
+    </recipeMaker>
+    <statBases>
+      <WorkToMake>12000</WorkToMake>
+      <Mass>3</Mass>
+    </statBases>
+    <costList>
+      <NanoSpores>100</NanoSpores>
+    </costList>
+	<weaponClasses>
+      <li>Melee</li>
+    </weaponClasses>
+    <tools>
+      <li>
+        <label>hook</label>
+        <capacities>
+          <li>WF_Sharp</li>
+        </capacities>
+        <power>4</power>
+        <cooldownTime>0.4</cooldownTime>
+      </li>
+      <li>
+        <label>blade</label>
+        <capacities>
+          <li>WF_Sharp</li>
+        </capacities>
+        <power>15</power>
+        <cooldownTime>1.2</cooldownTime>
+      </li>
+    </tools>
+	
+	<hediffToAdd>WF_Generic_Slash</hediffToAdd>
+	<hediffChance>0.25</hediffChance>
+	<critChance>0.19</critChance>
+	<critDamage>2.00</critDamage>
+	
+  </ThingDef>
+
+</Defs>

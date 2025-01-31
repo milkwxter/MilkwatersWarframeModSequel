@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+<AlienRace.ThingDef_AlienRace ParentName="WarframeBaseRace">
+    <defName>WarframeExcaliburRace</defName>
+    <label>excalibur</label>
+    <description>Excalibur epitomizes the warrior spirit. His master swordsmanship deals high damage. He is the embodiment of martial excellence.</description>
+	<thingClass>WarframeModSequel.WarframePawn</thingClass>
+	<alienRace>
+		<graphicPaths>
+			<body>Races/Excalibur/</body>
+			<head>
+				<path>Races/Excalibur/</path>
+			</head>
+		</graphicPaths>
+		
+		<generalSettings>
+			<alienPartGenerator>
+			
+			  <headTypes Inherit="false">
+				<li>Male_AverageNormal</li>
+			  </headTypes>
+			  <customHeadDrawSize>(0.85, 0.85)</customHeadDrawSize>
+			  
+			  <bodyTypes Inherit="false">
+				  <li>Male</li>
+			  </bodyTypes>
+
+			</alienPartGenerator>
+			
+			<maleGenderProbability>1.0</maleGenderProbability>
+		</generalSettings>
+		
+		<raceRestriction>
+			<canReproduce>false</canReproduce>
+			<xenotypeList>
+				<li>WarframeXenotype</li>
+			</xenotypeList>
+			<onlyUseRaceRestrictedXenotypes>true</onlyUseRaceRestrictedXenotypes>
+		</raceRestriction>
+	</alienRace>
+		
+</AlienRace.ThingDef_AlienRace>
+
+<PawnKindDef ParentName="BasePlayerPawnKind">
+    <defName>WF_Colonist_Excalibur</defName>
+    <label>excalibur</label>
+    <race>WarframeExcaliburRace</race>
+    <defaultFactionType>PlayerColony</defaultFactionType>
+
+    <!-- This is a required field. 13~21 is the default value for Crashlanded player colonists. -->
+    <initialResistanceRange>13~21</initialResistanceRange>
+	
+	<xenotypeSet Inherit="false">
+		<xenotypeChances>
+				<WarframeXenotype MayRequire="Ludeon.RimWorld.Biotech">1.0</WarframeXenotype>
+			</xenotypeChances>
+	</xenotypeSet>
+	
+	<modExtensions>
+         <li Class="VanillaPsycastsExpanded.PawnKindAbilityExtension_Psycasts">
+            <implantDef>VPE_PsycastAbilityImplant</implantDef>
+            <initialLevel>5</initialLevel>
+            <statUpgradePoints>0~0</statUpgradePoints>
+            <unlockedPaths>
+               <VPE_WF_Excalibur>4~4|4~4</VPE_WF_Excalibur>
+            </unlockedPaths>
+         </li>
+    </modExtensions>
+	
+	<backstoryFiltersOverride>
+		<li>
+			<categories>
+				<li>WarframeCommon</li>
+			</categories>
+		</li>
+    </backstoryFiltersOverride>
+
+</PawnKindDef>
+
+</Defs>

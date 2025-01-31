@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<Defs>
+
+ <!-- Broken War -->
+<ThingDef ParentName="BaseMeleeWeapon_Sharp_Quality" Class="WarframeModSequel.WarframeMeleeThingDef">
+    <defName>Milkwater_Broken_War</defName>
+    <label>broken war</label>
+    <description>A fragment of Stalker's War Sword, a symbol of his defeat.</description>
+    <graphicData>
+      <texPath>Things/Weapons/Milkwater_Broken_War</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>1.1</drawSize>
+    </graphicData>
+    <soundInteract>Milkwater_Interact_Melee</soundInteract>
+	<equippedAngleOffset>0</equippedAngleOffset>
+    <recipeMaker>
+      <recipeUsers Inherit="False">
+        <li>TableOrokin</li>
+      </recipeUsers>
+      <researchPrerequisite>WF_SentientWeaponry</researchPrerequisite>
+      <skillRequirements>
+        <Crafting>8</Crafting>
+      </skillRequirements>
+    </recipeMaker>
+    <statBases>
+      <WorkToMake>28000</WorkToMake>
+      <Mass>2</Mass>
+    </statBases>
+    <costList>
+      <Plasteel>100</Plasteel>
+    </costList>
+	<weaponClasses>
+      <li>Melee</li>
+    </weaponClasses>
+    <tools>
+      <li>
+        <label>blade</label>
+        <capacities>
+          <li>WF_Sharp</li>
+        </capacities>
+        <power>22</power>
+        <cooldownTime>1.4</cooldownTime>
+      </li>
+    </tools>
+	
+	<hediffToAdd>WF_Generic_Slash</hediffToAdd>
+	<hediffChance>0.20</hediffChance>
+	<critChance>0.35</critChance>
+	<critDamage>2.20</critDamage>
+	
+  </ThingDef>
+  
+   <!-- War -->
+<ThingDef ParentName="BaseMeleeWeapon_Sharp_Quality" Class="WarframeModSequel.WarframeMeleeThingDef">
+    <defName>Milkwater_War</defName>
+    <label>war</label>
+    <description>The Stalker's sword as bestowed to him by the Sentient Hunhow.</description>
+    <graphicData>
+      <texPath>Things/Weapons/Milkwater_War</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>2.0</drawSize>
+    </graphicData>
+    <soundInteract>Milkwater_Interact_Melee</soundInteract>
+	<equippedAngleOffset>-55</equippedAngleOffset>
+	
+	<modExtensions>
+		<li Class="VFECore.ThingDefExtension">
+			<weaponCarryDrawOffsets>
+				<north>
+					<drawOffset>(0.7,0,0.6)</drawOffset>
+				</north>
+				<east>
+					<drawOffset>(0.7,0,0.6)</drawOffset>
+				</east>
+				<south>
+					<drawOffset>(0.7,0,0.6)</drawOffset>
+				</south>
+				<west>
+					<drawOffset>(-0.7,0,0.6)</drawOffset>
+				</west>
+			</weaponCarryDrawOffsets>
+		</li>
+	</modExtensions>
+	
+    <recipeMaker>
+      <recipeUsers Inherit="False">
+        <li>TableOrokin</li>
+      </recipeUsers>
+      <researchPrerequisite>WF_SentientWeaponry</researchPrerequisite>
+      <skillRequirements>
+        <Crafting>8</Crafting>
+      </skillRequirements>
+    </recipeMaker>
+    <statBases>
+      <WorkToMake>17000</WorkToMake>
+      <Mass>4</Mass>
+    </statBases>
+    <costList>
+      <Milkwater_Broken_War>2</Milkwater_Broken_War>
+    </costList>
+	<weaponClasses>
+      <li>Melee</li>
+    </weaponClasses>
+    <tools>
+      <li>
+        <label>blade</label>
+        <capacities>
+          <li>WF_Sharp</li>
+        </capacities>
+        <power>35</power>
+        <cooldownTime>1.9</cooldownTime>
+      </li>
+    </tools>
+	
+	<hediffToAdd>WF_Generic_Impact</hediffToAdd>
+	<hediffChance>0.26</hediffChance>
+	<critChance>0.26</critChance>
+	<critDamage>2.60</critDamage>
+	
+  </ThingDef>
+  
+</Defs>

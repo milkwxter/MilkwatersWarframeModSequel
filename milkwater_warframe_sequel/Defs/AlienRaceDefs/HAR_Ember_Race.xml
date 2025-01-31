@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+<AlienRace.ThingDef_AlienRace ParentName="WarframeBaseRace">
+    <defName>WarframeEmberRace</defName>
+    <label>ember</label>
+    <description>Harness the power of fire. Ember's heat deals high damage. She keeps a cool head when the battle is hot.</description>
+	<thingClass>WarframeModSequel.WarframePawn</thingClass>
+	<alienRace>
+		<graphicPaths>
+			<body>Races/Ember/</body>
+			<head>
+				<path>Races/Ember/</path>
+			</head>
+		</graphicPaths>
+		
+		<generalSettings>
+			<alienPartGenerator>
+			
+			  <headTypes Inherit="false">
+				<li>Female_AverageNormal</li>
+			  </headTypes>
+			  <customHeadDrawSize>(0.85, 0.85)</customHeadDrawSize>
+			  
+			  <bodyTypes Inherit="false">
+				  <li>Female</li>
+			  </bodyTypes>
+
+			</alienPartGenerator>
+			
+			<maleGenderProbability>0.0</maleGenderProbability>
+		</generalSettings>
+		
+		<raceRestriction>
+			<canReproduce>false</canReproduce>
+			<xenotypeList>
+				<li>WarframeXenotype</li>
+			</xenotypeList>
+			<onlyUseRaceRestrictedXenotypes>true</onlyUseRaceRestrictedXenotypes>
+		</raceRestriction>
+	</alienRace>
+		
+</AlienRace.ThingDef_AlienRace>
+
+<PawnKindDef ParentName="BasePlayerPawnKind">
+    <defName>WF_Colonist_Ember</defName>
+    <label>ember</label>
+    <race>WarframeEmberRace</race>
+    <defaultFactionType>PlayerColony</defaultFactionType>
+
+    <!-- This is a required field. 13~21 is the default value for Crashlanded player colonists. -->
+    <initialResistanceRange>13~21</initialResistanceRange>
+	
+	<xenotypeSet Inherit="false">
+		<xenotypeChances>
+				<WarframeXenotype MayRequire="Ludeon.RimWorld.Biotech">1.0</WarframeXenotype>
+			</xenotypeChances>
+	</xenotypeSet>
+	
+	<modExtensions>
+         <li Class="VanillaPsycastsExpanded.PawnKindAbilityExtension_Psycasts">
+            <implantDef>VPE_PsycastAbilityImplant</implantDef>
+            <initialLevel>5</initialLevel>
+            <statUpgradePoints>0~0</statUpgradePoints>
+            <unlockedPaths>
+               <VPE_WF_Ember>4~4|4~4</VPE_WF_Ember>
+            </unlockedPaths>
+         </li>
+    </modExtensions>
+	
+	<backstoryFiltersOverride>
+		<li>
+			<categories>
+				<li>WarframeCommon</li>
+			</categories>
+		</li>
+    </backstoryFiltersOverride>
+
+</PawnKindDef>
+
+</Defs>

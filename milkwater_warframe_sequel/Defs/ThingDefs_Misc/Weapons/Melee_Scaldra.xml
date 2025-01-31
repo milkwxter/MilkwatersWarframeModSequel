@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<Defs>
+
+ <!-- Hate -->
+<ThingDef ParentName="BaseMeleeWeapon_Sharp_Quality" Class="WarframeModSequel.WarframeMeleeThingDef">
+    <defName>Milkwater_Protokol_Longsword</defName>
+    <label>protokol longsword</label>
+    <description>Take the fight to a new era with Arthur Nightingale’s signature Skana longsword.</description>
+    <graphicData>
+      <texPath>Things/Weapons/Milkwater_Protokol_Longsword</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>1.0</drawSize>
+    </graphicData>
+    <soundInteract>Milkwater_Interact_Melee</soundInteract>
+	<equippedAngleOffset>0</equippedAngleOffset>
+    <recipeMaker>
+      <recipeUsers Inherit="False">
+        <li>TableOrokin</li>
+      </recipeUsers>
+      <researchPrerequisite>WF_ScaldraWeaponry</researchPrerequisite>
+      <skillRequirements>
+        <Crafting>8</Crafting>
+      </skillRequirements>
+    </recipeMaker>
+    <statBases>
+      <WorkToMake>20000</WorkToMake>
+      <Mass>2</Mass>
+    </statBases>
+    <costList>
+      <Plasteel>50</Plasteel>
+    </costList>
+	<weaponClasses>
+      <li>Melee</li>
+    </weaponClasses>
+    <tools>
+      <li>
+        <label>blade</label>
+        <capacities>
+          <li>WF_Sharp</li>
+        </capacities>
+        <power>20</power>
+        <cooldownTime>1.2</cooldownTime>
+      </li>
+    </tools>
+	
+	<hediffToAdd>WF_Generic_Slash</hediffToAdd>
+	<hediffChance>0.33</hediffChance>
+	<critChance>0.10</critChance>
+	<critDamage>1.80</critDamage>
+	
+  </ThingDef>
+  
+</Defs>

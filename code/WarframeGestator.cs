@@ -31,6 +31,16 @@ namespace WarframeModSequel
         private Graphic cylinderGraphic;
         private Graphic topGraphic;
 
+        // Ensure our data is saved and loaded with the game
+        public override void ExposeData()
+        {
+            base.ExposeData();
+            Scribe_Values.Look(ref numParts, "numWarframeGestatorParts", 0);
+            Scribe_Values.Look(ref isOn, "isWarframeGestatorOn", false);
+            Scribe_Values.Look(ref currentTicks, "currentWarframeGestatorProgress", 0);
+            Scribe_Defs.Look(ref pawnKindToCraft, "currentWarframeGestatorPawnKind");
+        }
+
         public override IEnumerable<FloatMenuOption> GetFloatMenuOptions(Pawn myPawn)
         {
             if( numParts >= 3)
@@ -46,7 +56,11 @@ namespace WarframeModSequel
                 yield return new FloatMenuOption("Fill warframe gestator", delegate
                 {
                     Thing part = this.Map.listerThings.ThingsOfDef(DefDatabase<ThingDef>.GetNamed("WarframeParts")).FirstOrDefault();
-                    Log.Message(part);
+                    if (part == null)
+                    {
+                        Log.Error("No warframe parts. Please craft some.");
+                        return;
+                    }
                     Job job = new Job(WFS_DefOf.FillWarframeGestator, this, part);
                     myPawn.jobs.TryTakeOrderedJob(job);
                 });
@@ -102,8 +116,6 @@ namespace WarframeModSequel
             // set his age to 18
             pawn.ageTracker.AgeBiologicalTicks = (long)(18 * 3600000L);
             pawn.ageTracker.AgeChronologicalTicks = (long)(18 * 3600000L);
-
-            // set his backstory
 
             // Spawn the pawn at the interaction cell
             GenSpawn.Spawn(pawn, this.InteractionCell, this.Map);
@@ -320,26 +332,36 @@ namespace WarframeModSequel
             Widgets.BeginScrollView(scrollRect, ref scrollPosition, viewRect);
 
             float y = 0f;
-            foreach (PawnKindDef pawnKind in DefDatabase<PawnKindDef>.AllDefs.Where(pawnKind => pawnKind.race == ThingDef_AlienRace.Named("WarframeBaseRace")))
+            foreach (PawnKindDef pawnKind in DefDatabase<PawnKindDef>.AllDefs.Where(pawnKind => WFS_Globals.warframeRaces.Contains(pawnKind.race)))
             {
                 // Draw a portrait of the warframe
                 Rect portraitRect = new Rect(0, y, 30f, 30f);
-                Widgets.DrawTextureFitted(portraitRect, ContentFinder<Texture2D>.Get("Races/Excalibur/Heads/Male_Average_Normal_east", true), 1.0f);
+                Widgets.DrawTextureFitted(portraitRect, getWarframeHeadTexture(pawnKind.race), 1.0f);
 
                 // Draw the name of the warframe to craft
-                Rect pawnRect = new Rect(30, y, viewRect.width - 30f, 30f);
-                Widgets.Label(pawnRect, pawnKind.defName);
+                Rect pawnRect = new Rect(30, y, viewRect.width - 130f, 60f);
+                Widgets.Label(pawnRect, pawnKind.label.CapitalizeFirst() + ": " + pawnKind.race.description);
 
                 // Draw a button
-                if (Widgets.ButtonText(new Rect(viewRect.width - 100f, y, 100f, 30f), "Craft"))
+                if (Widgets.ButtonText(new Rect(viewRect.width - 100f, y, 100f, 60f), "Craft"))
                 {
                     OnPawnKindDefSelected(pawnKind);
                     Close();
                 }
-                y += 30f;
+                y += 60f;
             }
 
             Widgets.EndScrollView();
+        }
+
+        private Texture2D getWarframeHeadTexture(ThingDef warframeRace)
+        {
+            if (warframeRace == ThingDef_AlienRace.Named("WarframeEmberRace"))
+                return ContentFinder<Texture2D>.Get("Races/Ember/Female_Average_Normal_east", true);
+            else if (warframeRace == ThingDef_AlienRace.Named("WarframeExcaliburRace"))
+                return ContentFinder<Texture2D>.Get("Races/Excalibur/Male_Average_Normal_east", true);
+            else
+                return ContentFinder<Texture2D>.Get("Races/Excalibur/Male_Average_Normal_south", true);
         }
 
         private void OnPawnKindDefSelected(PawnKindDef pawnKind)
