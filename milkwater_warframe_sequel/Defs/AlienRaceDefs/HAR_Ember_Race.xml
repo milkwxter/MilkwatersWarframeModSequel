@@ -53,17 +53,17 @@
 	
 	<xenotypeSet Inherit="false">
 		<xenotypeChances>
-				<WarframeXenotype MayRequire="Ludeon.RimWorld.Biotech">1.0</WarframeXenotype>
-			</xenotypeChances>
+			<WarframeXenotype MayRequire="Ludeon.RimWorld.Biotech">1.0</WarframeXenotype>
+		</xenotypeChances>
 	</xenotypeSet>
 	
 	<modExtensions>
          <li Class="VanillaPsycastsExpanded.PawnKindAbilityExtension_Psycasts">
             <implantDef>VPE_PsycastAbilityImplant</implantDef>
             <initialLevel>5</initialLevel>
-            <statUpgradePoints>0~0</statUpgradePoints>
+            <statUpgradePoints>5</statUpgradePoints>
             <unlockedPaths>
-               <VPE_WF_Ember>4~4|4~4</VPE_WF_Ember>
+               <VPE_WF_Ember>4~5|4~5</VPE_WF_Ember>
             </unlockedPaths>
          </li>
     </modExtensions>
