@@ -317,7 +317,7 @@
 <ThingDef ParentName="BaseHumanMakeableGun">
     <defName>Milkwater_Tonkor</defName>
     <label>tonkor</label>
-    <description>THurl mayhem and destruction with this Grineer grenade launcher.</description>
+    <description>Hurl mayhem and destruction with this Grineer grenade launcher.</description>
     <graphicData>
       <texPath>Things/Weapons/Milkwater_Tonkor</texPath>
       <graphicClass>Graphic_Single</graphicClass>
