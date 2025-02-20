@@ -60,10 +60,11 @@
 	<modExtensions>
          <li Class="VanillaPsycastsExpanded.PawnKindAbilityExtension_Psycasts">
             <implantDef>VPE_PsycastAbilityImplant</implantDef>
-            <initialLevel>5</initialLevel>
-            <statUpgradePoints>5</statUpgradePoints>
+            <initialLevel>0</initialLevel>
+            <statUpgradePoints>0</statUpgradePoints>
             <unlockedPaths>
-               <VPE_WF_Ember>4~5|4~5</VPE_WF_Ember>
+				<!-- unlockedAbilityLevelRange | unlockedAbilityCount -->
+               <VPE_WF_Ember>99~99|99~99</VPE_WF_Ember>
             </unlockedPaths>
          </li>
     </modExtensions>

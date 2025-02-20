@@ -5,14 +5,13 @@
     <defName>WF_Warframe_Cryopod</defName>
     <label>warframe cryopod</label>
     <thingClass>Building_Bed</thingClass>
-	<description>A cozy mattress and sheets on a frame for resting.</description>
+	<description>A cryopod designed to hold and maintain a warframe. Inctricate robotics inside will repair a warframe inside the pod at a rapid pace.</description>
     <graphicData>
       <texPath>Things/Building/Cryopod</texPath>
-      <graphicClass>Graphic_Multi</graphicClass>
-      <shaderType>CutoutComplex</shaderType>
-      <drawSize>(2,2)</drawSize>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(2, 2)</drawSize>
       <damageData>
-        <rect>(0,0.05,1,1.95)</rect>
+        <rect>(0, 0.05, 1, 1.95)</rect>
       </damageData>
     </graphicData>
     <size>(1,2)</size>
@@ -20,7 +19,6 @@
     <altitudeLayer>Building</altitudeLayer>
     <passability>PassThroughOnly</passability>
     <defaultPlacingRot>South</defaultPlacingRot>
-    <uiOrder>2020</uiOrder>
     <building>
       <buildingTags>
         <li>Bed</li>
@@ -69,6 +67,7 @@
     </researchPrerequisites>
 	<designationCategory>Production</designationCategory>
     <uiIconScale>0.90</uiIconScale>
+    <constructionSkillPrerequisite>6</constructionSkillPrerequisite>
 	
 </ThingDef>
 
