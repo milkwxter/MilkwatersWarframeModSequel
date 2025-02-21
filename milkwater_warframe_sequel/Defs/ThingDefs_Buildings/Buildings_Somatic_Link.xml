@@ -9,14 +9,25 @@
   <graphicData>
     <texPath>Things/Building/Somatic_Link</texPath>
     <graphicClass>Graphic_Single</graphicClass>
-    <drawSize>(4,4)</drawSize>
+    <drawSize>(4, 3)</drawSize>
   </graphicData>
   
+  <statBases>
+    <WorkToBuild>8000</WorkToBuild>
+    <MaxHitPoints>400</MaxHitPoints>
+    <Flammability>0</Flammability>
+  </statBases>
+  
+    <costList>
+      <Steel>80</Steel>
+      <ComponentIndustrial>6</ComponentIndustrial>
+    </costList>
+  
   <designationCategory>Production</designationCategory>
-  <size>(3,4)</size>
+  <size>(3, 3)</size>
   <passability>PassThroughOnly</passability>
   <hasInteractionCell>True</hasInteractionCell>
-  <interactionCellOffset>(0,0,0)</interactionCellOffset>
+  <interactionCellOffset>(0, 0, -1)</interactionCellOffset>
   <rotatable>false</rotatable>
   <researchPrerequisites><li>WF_Warframes</li></researchPrerequisites>
   <constructionSkillPrerequisite>9</constructionSkillPrerequisite>

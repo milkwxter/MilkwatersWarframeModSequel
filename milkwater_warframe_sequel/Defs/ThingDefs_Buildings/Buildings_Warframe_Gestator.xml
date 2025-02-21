@@ -22,6 +22,17 @@
   <drawerType>MapMeshAndRealTime</drawerType>
   <altitudeLayer>Building</altitudeLayer>
   
+  <statBases>
+    <WorkToBuild>8000</WorkToBuild>
+    <MaxHitPoints>400</MaxHitPoints>
+    <Flammability>0</Flammability>
+  </statBases>
+  
+  <costList>
+    <Steel>100</Steel>
+    <ComponentIndustrial>6</ComponentIndustrial>
+  </costList>
+  
   <building>
       <barDrawData>
         <north>

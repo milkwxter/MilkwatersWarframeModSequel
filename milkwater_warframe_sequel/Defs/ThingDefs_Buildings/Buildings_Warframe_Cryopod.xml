@@ -57,6 +57,12 @@
       <SurgerySuccessChanceFactor>1.2</SurgerySuccessChanceFactor>
       <BirthRitualQualityOffset MayRequire="Ludeon.RimWorld.Biotech">2</BirthRitualQualityOffset>
     </statBases>
+	
+	<costList>
+      <Steel>40</Steel>
+      <ComponentIndustrial>1</ComponentIndustrial>
+    </costList>
+	
     <fillPercent>0.5</fillPercent>
     <pathCost>42</pathCost>
     <staticSunShadowHeight>0.17</staticSunShadowHeight>
