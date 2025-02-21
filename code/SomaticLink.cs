@@ -121,10 +121,16 @@ namespace WarframeModSequel
         public Dialog_AssignWarframe(SomaticLink building)
         {
             this.building = building;
-            this.pawns = building.Map.mapPawns.AllHumanlikeSpawned;
             this.forcePause = true;
             this.doCloseX = true;
             this.absorbInputAroundWindow = true;
+
+            // get all the potential pawns from all the maps
+            this.pawns = new List<Pawn>();
+            foreach (Map map in Find.Maps)
+            {
+                pawns.AddRange(map.mapPawns.AllPawns);
+            }
         }
 
         public override Vector2 InitialSize => new Vector2(640f, 480f);

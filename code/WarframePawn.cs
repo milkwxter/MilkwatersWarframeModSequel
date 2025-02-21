@@ -9,6 +9,11 @@ namespace WarframeModSequel
     {
         public bool linkBroken = true;
 
+        public bool GetLinkStatus()
+        {
+            return linkBroken;
+        }
+
         public override void Tick()
         {
             // do normal ticking stuff
@@ -44,13 +49,20 @@ namespace WarframeModSequel
 
         private bool IsPawnInSomaticLink()
         {
-            foreach (Thing thing in this.Map.listerThings.ThingsOfDef(ThingDef.Named("WF_Somatic_Link")))
+            // Check all maps
+            foreach (Map map in Find.Maps)
             {
-                if (thing is SomaticLink somaticLink && somaticLink.getOperatorPawn() != null)
+                // Check the currently checked map for a Somatic link
+                foreach (Thing thing in map.listerThings.ThingsOfDef(ThingDef.Named("WF_Somatic_Link")))
                 {
-                    if(somaticLink.getWarframePawn() == this)
+                    // Check to make sure the thing is actually a somatic link, and make sure it has an operator
+                    if (thing is SomaticLink somaticLink && somaticLink.getOperatorPawn() != null)
                     {
-                        return true;
+                        // Check if the controlled warframe is actually this pawn
+                        if (somaticLink.getWarframePawn() == this)
+                        {
+                            return true;
+                        }
                     }
                 }
             }
