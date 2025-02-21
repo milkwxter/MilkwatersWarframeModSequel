@@ -1,2 +1,4 @@
 # MilkwatersWarframeModSequel
-The sequel to my warframe mod. I made this a sequel instead of an update because I will break a lot of stuff.
+The sequel to my warframe mod.
+
+Adds way more stuff and custom mechanics. Go on and have a look.
