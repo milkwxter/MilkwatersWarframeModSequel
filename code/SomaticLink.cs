@@ -152,7 +152,7 @@ namespace WarframeModSequel
 
                     // Draw the name of the pawn beside it
                     Rect pawnRect = new Rect(30, y, viewRect.width - 30f, 30f);
-                    Widgets.Label(pawnRect, pawn.Name.ToStringFull + ", " + pawn.def.defName + " " + pawn.genes.xenotypeName);
+                    Widgets.Label(pawnRect, pawn.Name.ToStringFull + ", " + pawn.def.label);
 
                     // Draw a button
                     if (Widgets.ButtonText(new Rect(viewRect.width - 100f, y, 100f, 30f), "Operate"))

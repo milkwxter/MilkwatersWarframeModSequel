@@ -61,9 +61,11 @@
          <li Class="VanillaPsycastsExpanded.PawnKindAbilityExtension_Psycasts">
             <implantDef>VPE_PsycastAbilityImplant</implantDef>
             <initialLevel>5</initialLevel>
-            <statUpgradePoints>0~0</statUpgradePoints>
+			<!-- stat upgrade points will upgrade the initial level and improve psycaster stats -->
+            <statUpgradePoints>0</statUpgradePoints>
             <unlockedPaths>
-               <VPE_WF_Excalibur>4~4|4~4</VPE_WF_Excalibur>
+				<!-- unlockedAbilityLevelRange (what levels of abilities are avaliable) | unlockedAbilityCount (how many abilities to give) -->
+               <VPE_WF_Excalibur>99~99|99~99</VPE_WF_Excalibur>
             </unlockedPaths>
          </li>
     </modExtensions>

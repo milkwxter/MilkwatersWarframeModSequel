@@ -123,6 +123,9 @@ namespace WarframeModSequel
             // special effects
             FleckMaker.Static(pawn.Position, pawn.Map, DefDatabase<FleckDef>.GetNamed("WFS_Steam_Fleck"));
             DefDatabase<SoundDef>.GetNamed("Milkwater_WarframeDoneSteam").PlayOneShot(new TargetInfo(pawn.Position, pawn.Map, false));
+
+            // tell the player the warframe is done
+            Find.LetterStack.ReceiveLetter("Warframe completed", "Your new warframe is complete. Remember to assign their psycasts in the Psycast menu!", LetterDefOf.PositiveEvent);
         }
 
         public override void Tick()
