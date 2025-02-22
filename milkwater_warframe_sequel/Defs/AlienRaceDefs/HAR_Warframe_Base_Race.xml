@@ -25,6 +25,7 @@
 			<validBeds>
 			  <li>WF_Warframe_Cryopod</li>
 			</validBeds>
+			<humanRecipeImport>true</humanRecipeImport>
 		</generalSettings>
 		
 		<raceRestriction>

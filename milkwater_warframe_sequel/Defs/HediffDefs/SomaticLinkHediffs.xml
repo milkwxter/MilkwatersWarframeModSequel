@@ -13,11 +13,11 @@
             <capMods>
                 <li>
                     <capacity>Moving</capacity>
-                    <offset>-1.0</offset>
+                    <setMax>-1.0</setMax>
                 </li>
 				<li>
                     <capacity>Manipulation</capacity>
-                    <offset>-1.0</offset>
+                    <setMax>-1.0</setMax>
                 </li>
             </capMods>
         </li>
