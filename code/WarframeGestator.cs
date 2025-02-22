@@ -117,6 +117,10 @@ namespace WarframeModSequel
             pawn.ageTracker.AgeBiologicalTicks = (long)(18 * 3600000L);
             pawn.ageTracker.AgeChronologicalTicks = (long)(18 * 3600000L);
 
+            // give him major passion for shooting and melee
+            pawn.skills.GetSkill(SkillDefOf.Shooting).passion = Passion.Major;
+            pawn.skills.GetSkill(SkillDefOf.Melee).passion = Passion.Major;
+
             // Spawn the pawn at the interaction cell
             GenSpawn.Spawn(pawn, this.InteractionCell, this.Map);
 
