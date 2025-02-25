@@ -15,6 +15,14 @@ namespace WarframeModSequel
         protected Pawn operatorPawn = null;
         protected Pawn warframePawn = null;
 
+        // Ensure our data is saved and loaded with the game
+        public override void ExposeData()
+        {
+            base.ExposeData();
+            Scribe_References.Look(ref operatorPawn, "operatorPawn");
+            Scribe_References.Look(ref warframePawn, "warframePawn");
+        }
+
         public override IEnumerable<FloatMenuOption> GetFloatMenuOptions(Pawn myPawn)
         {
             yield return new FloatMenuOption("Operate somatic link", delegate

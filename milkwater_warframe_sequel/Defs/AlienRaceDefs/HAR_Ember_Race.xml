@@ -65,7 +65,7 @@
             <statUpgradePoints>0</statUpgradePoints>
             <unlockedPaths>
 				<!-- unlockedAbilityLevelRange (what levels of abilities are avaliable) | unlockedAbilityCount (how many abilities to give) -->
-               <VPE_WF_Ember>99~99|99~99</VPE_WF_Ember>
+               <VPE_WF_Ember>1~4|4~4</VPE_WF_Ember>
             </unlockedPaths>
          </li>
     </modExtensions>

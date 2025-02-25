@@ -108,9 +108,10 @@ namespace WarframeModSequel
             }
         }
 
+        // this function spawns the pawn that was selected
         public void CraftPawnKind()
         {
-            // Generate the pawn
+            // generate the pawn
             Pawn pawn = PawnGenerator.GeneratePawn(pawnKindToCraft, Faction.OfPlayer);
 
             // set his age to 18
@@ -121,7 +122,15 @@ namespace WarframeModSequel
             pawn.skills.GetSkill(SkillDefOf.Shooting).passion = Passion.Major;
             pawn.skills.GetSkill(SkillDefOf.Melee).passion = Passion.Major;
 
-            // Spawn the pawn at the interaction cell
+            // check if Rebound (Continued) is installed
+            if (ModsConfig.IsActive("Mlie.Rebound"))
+            {
+                // add the specific trait to the pawn
+                TraitDef myTrait = DefDatabase<TraitDef>.GetNamed("ProjectileInversion_Trait");
+                pawn.story.traits.GainTrait(new Trait(myTrait));
+            }
+
+            // spawn the pawn at the interaction cell
             GenSpawn.Spawn(pawn, this.InteractionCell, this.Map);
 
             // special effects
