@@ -1,17 +1,14 @@
 ﻿using AlienRace;
 using RimWorld;
-using System;
 using System.Collections.Generic;
-using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using UnityEngine;
-using UnityEngine.UIElements;
+using VanillaPsycastsExpanded;
 using Verse;
 using Verse.AI;
-using Verse.Noise;
 using Verse.Sound;
-using static UnityEngine.GraphicsBuffer;
+using VFECore.Abilities;
 
 namespace WarframeModSequel
 {
@@ -130,6 +127,26 @@ namespace WarframeModSequel
                 pawn.story.traits.GainTrait(new Trait(myTrait));
             }
 
+            // max out their psycast trees
+            PawnKindAbilityExtension_Psycasts modExtension = pawn.kindDef.GetModExtension<PawnKindAbilityExtension_Psycasts>();
+            if (modExtension != null)
+            {
+                CompAbilities comp = pawn.GetComp<CompAbilities>();
+                foreach (PathUnlockData unlockedPath in modExtension.unlockedPaths)
+                {
+                    unlockedPath.path.abilities.ForEach(ability =>
+                    {
+                        // unlock this ability
+                        comp.GiveAbility(ability);
+                    });
+                }
+            }
+
+            // give him the psyfocus regeneration hediff
+            HediffDef hediffDef = HediffDef.Named("WF_Generic_PsyfocusRegen");
+            Hediff hediff = HediffMaker.MakeHediff(hediffDef, pawn);
+            pawn.health.AddHediff(hediff);
+
             // spawn the pawn at the interaction cell
             GenSpawn.Spawn(pawn, this.InteractionCell, this.Map);
 
@@ -138,7 +155,7 @@ namespace WarframeModSequel
             DefDatabase<SoundDef>.GetNamed("Milkwater_WarframeDoneSteam").PlayOneShot(new TargetInfo(pawn.Position, pawn.Map, false));
 
             // tell the player the warframe is done
-            Find.LetterStack.ReceiveLetter("Warframe completed", "Your new warframe is complete. Remember to assign their psycasts in the Psycast menu!", LetterDefOf.PositiveEvent);
+            Find.LetterStack.ReceiveLetter("Warframe completed", "Your new warframe is complete. Build a cryopod for them to rest in, and a somatic link to begin controlling them.", LetterDefOf.PositiveEvent);
         }
 
         public override void Tick()
