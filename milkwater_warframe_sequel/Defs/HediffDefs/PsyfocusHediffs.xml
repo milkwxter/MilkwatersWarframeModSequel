@@ -4,7 +4,7 @@
 <HediffDef ParentName="RoleStatBuff">
 		<defName>WF_Generic_PsyfocusRegen</defName>
 		<label>natural psyfocus regeneration</label>
-		<description>This pawn will naturally regenerate 5 psyfocus every so often.</description>
+		<description>This pawn will naturally regenerate psyfocus every so often without the need to meditate.</description>
 		<hediffClass>WarframeModSequel.WarframePsyfocusRegenerationHediff</hediffClass>
 		<defaultLabelColor>(0.4, 1, 0.7)</defaultLabelColor>
 		<isBad>False</isBad>

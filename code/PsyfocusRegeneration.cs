@@ -13,7 +13,7 @@ namespace WarframeModSequel
                 // make sure the pawn has a psylink
                 if (pawn.HasPsylink && pawn != null)
                 {
-                    pawn.psychicEntropy.OffsetPsyfocusDirectly(.05f);
+                    pawn.psychicEntropy.OffsetPsyfocusDirectly(.01f);
                 }
             }
         }
