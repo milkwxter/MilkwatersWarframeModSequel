@@ -14,7 +14,8 @@ namespace WarframeModSequel
         public static List<ThingDef_AlienRace> warframeRaces = new List<ThingDef_AlienRace>
         {
             DefDatabase<ThingDef_AlienRace>.GetNamed("WarframeExcaliburRace"),
-            DefDatabase<ThingDef_AlienRace>.GetNamed("WarframeEmberRace")
+            DefDatabase<ThingDef_AlienRace>.GetNamed("WarframeEmberRace"),
+            DefDatabase<ThingDef_AlienRace>.GetNamed("WarframeRhinoRace")
         };
     }
 

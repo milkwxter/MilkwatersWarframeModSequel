@@ -22,10 +22,14 @@
 			  </headTypes>
 			  <customHeadDrawSize>(0.85, 0.85)</customHeadDrawSize>
 			</alienPartGenerator>
+			
 			<validBeds>
 			  <li>WF_Warframe_Cryopod</li>
 			</validBeds>
+			
 			<humanRecipeImport>true</humanRecipeImport>
+			
+			<immuneToAge>true</immuneToAge>
 		</generalSettings>
 		
 		<raceRestriction>

@@ -10,4 +10,20 @@
 		<isBad>False</isBad>
 </HediffDef>
 
+<HediffDef ParentName="RoleStatBuff">
+		<defName>WF_Generic_NaturalArmor</defName>
+		<label>natural armor</label>
+		<description>This pawn has a naturally armored body.</description>
+		<defaultLabelColor>(0.8, 0.8, 0.8)</defaultLabelColor>
+		<isBad>False</isBad>
+		<stages>
+		  <li>
+			<statOffsets>
+			  <ArmorRating_Sharp>0.50</ArmorRating_Sharp>
+			  <ArmorRating_Blunt>0.50</ArmorRating_Blunt>
+			</statOffsets>
+		  </li>
+        </stages>
+</HediffDef>
+
 </Defs>

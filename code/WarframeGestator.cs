@@ -1,6 +1,7 @@
 ﻿using AlienRace;
 using RimWorld;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using UnityEngine;
@@ -9,6 +10,7 @@ using Verse;
 using Verse.AI;
 using Verse.Sound;
 using VFECore.Abilities;
+using Color = UnityEngine.Color;
 
 namespace WarframeModSequel
 {
@@ -145,6 +147,11 @@ namespace WarframeModSequel
             // give him the psyfocus regeneration hediff
             HediffDef hediffDef = HediffDef.Named("WF_Generic_PsyfocusRegen");
             Hediff hediff = HediffMaker.MakeHediff(hediffDef, pawn);
+            pawn.health.AddHediff(hediff);
+
+            // give him the natural armor hediff
+            hediffDef = HediffDef.Named("WF_Generic_NaturalArmor");
+            hediff = HediffMaker.MakeHediff(hediffDef, pawn);
             pawn.health.AddHediff(hediff);
 
             // spawn the pawn at the interaction cell
@@ -368,11 +375,11 @@ namespace WarframeModSequel
             foreach (PawnKindDef pawnKind in DefDatabase<PawnKindDef>.AllDefs.Where(pawnKind => WFS_Globals.warframeRaces.Contains(pawnKind.race)))
             {
                 // Draw a portrait of the warframe
-                Rect portraitRect = new Rect(0, y, 30f, 30f);
-                Widgets.DrawTextureFitted(portraitRect, getWarframeHeadTexture(pawnKind.race), 1.0f);
+                Rect portraitRect = new Rect(0, y + 15, 30f, 30f);
+                Widgets.DrawTextureFitted(portraitRect, getWarframeHeadTexture(pawnKind.race), 1.5f);
 
-                // Draw the name of the warframe to craft
-                Rect pawnRect = new Rect(30, y, viewRect.width - 130f, 60f);
+                // Draw the info of the warframe to craft
+                Rect pawnRect = new Rect(40, y, viewRect.width - 130f, 60f);
                 Widgets.Label(pawnRect, pawnKind.label.CapitalizeFirst() + ": " + pawnKind.race.description);
 
                 // Draw a button
@@ -393,6 +400,8 @@ namespace WarframeModSequel
                 return ContentFinder<Texture2D>.Get("Races/Ember/Female_Average_Normal_east", true);
             else if (warframeRace == ThingDef_AlienRace.Named("WarframeExcaliburRace"))
                 return ContentFinder<Texture2D>.Get("Races/Excalibur/Male_Average_Normal_east", true);
+            else if (warframeRace == ThingDef_AlienRace.Named("WarframeRhinoRace"))
+                return ContentFinder<Texture2D>.Get("Races/Rhino/Male_Average_Normal_east", true);
             else
                 return ContentFinder<Texture2D>.Get("Races/Excalibur/Male_Average_Normal_south", true);
         }

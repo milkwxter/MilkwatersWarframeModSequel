@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+<AlienRace.ThingDef_AlienRace ParentName="WarframeBaseRace">
+    <defName>WarframeRhinoRace</defName>
+    <label>rhino</label>
+    <description>Rhino packs a punch. He boasts high survivability and crowd control. The wise would do well to stand clear when he charges.</description>
+	<thingClass>WarframeModSequel.WarframePawn</thingClass>
+	<alienRace>
+		<graphicPaths>
+			<body>Races/Rhino/</body>
+			<head>
+				<path>Races/Rhino/</path>
+			</head>
+		</graphicPaths>
+		
+		<generalSettings>
+			<alienPartGenerator>
+			
+			  <headTypes Inherit="false">
+				<li>Male_AverageNormal</li>
+			  </headTypes>
+			  <customHeadDrawSize>(0.85, 0.85)</customHeadDrawSize>
+			  
+			  <bodyTypes Inherit="false">
+				  <li>Hulk</li>
+			  </bodyTypes>
+
+			</alienPartGenerator>
+			
+			<maleGenderProbability>1.0</maleGenderProbability>
+		</generalSettings>
+		
+		<raceRestriction>
+			<canReproduce>false</canReproduce>
+			<xenotypeList>
+				<li>WarframeXenotype</li>
+			</xenotypeList>
+			<onlyUseRaceRestrictedXenotypes>true</onlyUseRaceRestrictedXenotypes>
+		</raceRestriction>
+	</alienRace>
+		
+</AlienRace.ThingDef_AlienRace>
+
+<PawnKindDef ParentName="BasePlayerPawnKind">
+    <defName>WF_Colonist_Rhino</defName>
+    <label>rhino</label>
+    <race>WarframeRhinoRace</race>
+    <defaultFactionType>PlayerColony</defaultFactionType>
+
+    <!-- This is a required field. 13~21 is the default value for Crashlanded player colonists. -->
+    <initialResistanceRange>13~21</initialResistanceRange>
+	
+	<xenotypeSet Inherit="false">
+		<xenotypeChances>
+				<WarframeXenotype MayRequire="Ludeon.RimWorld.Biotech">1.0</WarframeXenotype>
+			</xenotypeChances>
+	</xenotypeSet>
+	
+	<modExtensions>
+         <li Class="VanillaPsycastsExpanded.PawnKindAbilityExtension_Psycasts">
+            <implantDef>VPE_PsycastAbilityImplant</implantDef>
+            <initialLevel>1</initialLevel>
+			<!-- stat upgrade points will upgrade the initial level and improve psycaster stats -->
+            <statUpgradePoints>0</statUpgradePoints>
+            <unlockedPaths>
+				<!-- unlockedAbilityLevelRange (what levels of abilities are avaliable) | unlockedAbilityCount (how many abilities to give) -->
+               <VPE_WF_Rhino>0~0|0~0</VPE_WF_Rhino>
+            </unlockedPaths>
+         </li>
+    </modExtensions>
+	
+	<backstoryFiltersOverride>
+		<li>
+			<categories>
+				<li>WarframeCommon</li>
+			</categories>
+		</li>
+    </backstoryFiltersOverride>
+
+</PawnKindDef>
+
+</Defs>
